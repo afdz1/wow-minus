@@ -9,6 +9,7 @@ export type Confirmation = {
   notes?: string[];
   image?: string;
   imageAlt?: string;
+  credit?: { label: string; href: string };
 };
 
 export const CONFIRMED: Confirmation[] = [
@@ -26,6 +27,7 @@ export const CONFIRMED: Confirmation[] = [
     image: "/images/confirmed/full-name.png",
     imageAlt:
       "Character creation Full Name pane with Type Main Name and Type Secondary Name fields, plus a dice control.",
+    credit: { label: "@MrGMYT on X", href: "https://x.com/MrGMYT" },
   },
   {
     id: "controller-map",
@@ -59,6 +61,7 @@ export const CONFIRMED: Confirmation[] = [
     image: "/images/confirmed/ping-wheel.jpg",
     imageAlt:
       "Dwarf in Coldridge Valley with a retail-style ping wheel open. Chat shows Look here. Red error: Could not send ping: too many pings sent at once.",
+    credit: { label: "@MrGMYT on X", href: "https://x.com/MrGMYT" },
   },
 ];
 

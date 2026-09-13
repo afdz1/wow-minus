@@ -151,6 +151,14 @@ export default function HomePage() {
                   <Link href={`/confirmed#${CONFIRMED[0].id}`}>{CONFIRMED[0].title}</Link>
                 </h3>
                 <p style={{ margin: 0, color: "var(--muted)" }}>{CONFIRMED[0].fact}</p>
+                {CONFIRMED[0].credit ? (
+                  <p className="confirm-credit">
+                    Screenshot:{" "}
+                    <a href={CONFIRMED[0].credit.href} target="_blank" rel="noopener noreferrer">
+                      {CONFIRMED[0].credit.label}
+                    </a>
+                  </p>
+                ) : null}
               </div>
             </div>
           ) : null}

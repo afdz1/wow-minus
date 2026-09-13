@@ -49,6 +49,14 @@ export default function ConfirmedPage() {
               {c.image ? (
                 <figure className="article-figure shot">
                   <img src={c.image} alt={c.imageAlt ?? c.title} />
+                  {c.credit ? (
+                    <figcaption>
+                      Screenshot:{" "}
+                      <a href={c.credit.href} target="_blank" rel="noopener noreferrer">
+                        {c.credit.label}
+                      </a>
+                    </figcaption>
+                  ) : null}
                 </figure>
               ) : null}
             </article>
