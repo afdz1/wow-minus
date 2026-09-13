@@ -3,7 +3,7 @@ import { OFFICIAL } from "./art";
 export const DEEP_DIVE_ARTICLE = {
   slug: "deep-dive",
   title: "Forever Deep Dive",
-  dek: "ClassicMinus report from Blizzard’s Sunday BlizzCon panel: camping, 600 recipes, transmog loot rules, Legacy caps, rulesets instead of realms, combat stats, and Paladin.",
+  dek: "ClassicMinus report from Blizzard’s Sunday BlizzCon panel: camping, 600 recipes, transmog loot rules, Legacy caps, Realmless Azeroth, combat stats, and Paladin.",
   date: "2026-09-13",
   author: "ClassicMinus Staff",
   tag: "News",
@@ -19,8 +19,8 @@ export const DEEP_DIVE_ARTICLE = {
       heading: "Camping",
       image: OFFICIAL.features.systems,
       paragraphs: [
-        "Placing a campfire creates a campsite. Players rest there for vendors, repairs, tradeskill workspaces, and buffs that last one hour. You sit by the fire for a few moments before the buffs.",
-        "Each player can place one object. Each tradeskill has different objects, learned at different skill levels, for a unique buff or utility. Named examples: a sharpening wheel that increases strength; tailors place a faction banner that increases spirit; herbalists place an incense candle that increases intellect. Those are exclusive with class buffs such as Blessing of Might or Arcane Intellect. Objects scale with proficiency.",
+        "Placing a campfire creates a campsite. Players rest there for vendors, repairs, tradeskill workspaces, and buffs that last one hour. You sit by the fire for a few moments before the buffs. Camps are for the wilderness, not the center of town. Cooks teach the campfire.",
+        "Blacksmithing objects: Sharpening Wheel at skill 20 grants 34 Strength, exclusive with Strength of Earth Totem. Anvil at 140 replaces the wheel and keeps its benefits. Master Forge at 300 also keeps the wheel’s benefits and is usable for recipes that require it. All camping features share a 1-hour cooldown and need a campfire nearby.",
       ],
     },
     {
@@ -35,7 +35,8 @@ export const DEEP_DIVE_ARTICLE = {
       id: "transmog",
       heading: "Transmog",
       paragraphs: [
-        "Opt out by speaking to an NPC. First login also offers a mode selector with presets; Classic mode turns modern conveniences off. Individual settings can be reconfigured later.",
+        "First login offers Classic or Enhanced presets. Classic starts Standard Definition models, quest points of interest and objective blobs off, one bag off, transmog off. Enhanced starts High Definition models, quest blobs on, one bag on, transmog on. Any setting can be changed later.",
+        "Opt out at an NPC. Fyrenz Vishonar’s disable line: you will no longer see appearances applied to other players’ gear. You will only see the equipment they actually have equipped. Speak to the NPC again to turn it back on.",
         "Bind-on-pickup uncommon and rare dungeon drops grant the appearance to everyone in the group. You do not have to win the item to collect the look. Epic drops and raids grant the appearance only to the player who loots and binds the item.",
         "You transmog an item to the same kind — a cloth chest needs another cloth chest. A saved outfit can mix armor appearance types per slot so a field upgrade still matches. You cannot transmog a high-level appearance onto a low-level character. PvP appearances still require the rank.",
         "With transmog disabled you can still hide your own helm or cloak. Other players’ helm and cloak visibility is not affected. Further Classic-specific transmog rules are coming in blogs before launch.",
@@ -53,11 +54,11 @@ export const DEEP_DIVE_ARTICLE = {
     },
     {
       id: "rulesets",
-      heading: "Rulesets, not realm select",
+      heading: "Realmless Azeroth",
       paragraphs: [
-        "You do not pick a realm at character creation. Forever is also not one giant realm. You choose a ruleset: Normal (PvE), PvP, Roleplay, and Hardcore once Hardcore ships after launch.",
-        "Factions stay separate. You group only with the same ruleset. A dead Hardcore character can transfer to another ruleset. Characters use a Main Name and a Secondary Name.",
-        "Language preference affects who you encounter. PvP rulesets get faction-balance mechanisms. The engineering goal is large-realm populations with familiar faces — seeing the same players, and your guild, out in the world.",
+        "The Deep Dive slide is titled Realmless Azeroth. You pick a playstyle, not a realm: PvP, PvE, Roleplay, and Hardcore coming later. Each playstyle shares a version of the world.",
+        "Factions stay separate. You group only with the same playstyle. A dead Hardcore character can transfer to another playstyle. Characters use a Main Name and a Secondary Name.",
+        "Language preference affects who you encounter. PvP playstyles get faction-balance mechanisms. The engineering goal is large-realm populations with familiar faces — seeing the same players, and your guild, out in the world.",
       ],
     },
     {

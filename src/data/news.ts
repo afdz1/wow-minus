@@ -1,5 +1,6 @@
 import { OFFICIAL } from "./art";
 import { DEEP_DIVE_ARTICLE } from "./deep-dive-article";
+import { DEEP_DIVE_SLIDE_ARTICLES } from "./deep-dive-slides";
 import { FEATURES_ARTICLE } from "./features-article";
 import { PROFESSIONS_ARTICLE } from "./first-aid-article";
 import { LEGACY_ARTICLE } from "./legacy-article";
@@ -51,6 +52,7 @@ export type NewsArticle = {
 };
 
 export const NEWS: NewsArticle[] = [
+  ...DEEP_DIVE_SLIDE_ARTICLES,
   DEEP_DIVE_ARTICLE,
   WHATS_NEXT_ARTICLE,
   LEGACY_ARTICLE,
@@ -175,7 +177,7 @@ export const NEWS: NewsArticle[] = [
       "Camping is a profession. Players place campsites in the outdoor world. Other adventurers stop, contribute through tradeskills, share buffs, and talk. You sit a moment before the buffs. First Aid also crafts a First Aid Kit used at a campfire; camping features share a 1-hour cooldown.",
       "The Legacy system grants account-wide perks for leveling additional characters without letting alts skip the journey to 60. Challenges award one point each. Those points buy Professions, Adventure, and Resourcefulness bonuses, and the same total fills a cosmetic track. Character creation uses a Full Name: required Main Name and Secondary Name, not Name-Realm. You can hide the secondary name.",
       "Transmog is opt-in: you choose whether you see your own transmog and whether you see other players’ transmog. You can leave it off and see original gear on everyone — spoken as “clown suits for everyone.”",
-      "The Deep Dive: dungeon bind-on-pickup greens and blues grant appearances to the whole group; epic and raid looks go only to the player who binds the item. You do not pick a realm. You choose a ruleset — Normal, PvP, Roleplay, or Hardcore after launch. Legacy spend cap is 16 points; earn cap is 65 for the cosmetic track.",
+      "The Deep Dive: dungeon bind-on-pickup greens and blues grant appearances to the whole group; epic and raid looks go only to the player who binds the item. Realmless Azeroth: you pick PvP, PvE, Roleplay, or Hardcore coming later — each playstyle shares a version of the world. Legacy spend cap is 16 points; earn cap is 65 for the cosmetic track.",
       "Visual presets include modern and Classic looks. HD and SD is a game-wide toggle for your character, NPCs, and other players together. HD models keep restored Classic animations — “no bouncy dwarves.” Gamepad support and riding-skill updates are on the systems list. Rendering upgrades include rivers in Elwynn, fog rolling into Duskwood at night, and moonlight in Ashenvale.",
       "Native gamepad support is in the client. Controller Map shows Xbox-layout bindings, the HUD draws button prompts on the action bars, and Controller Info lives in the Main Menu. Official copy labels the option as alpha. Currently it can be tested on the Skyborne 1–10 experience only, not the dungeon playtest. In the Skyborne starting zone, press any button on the gamepad to switch.",
       "A retail-style ping wheel is in the client. It works in the open world, prints Look here to chat, and errors with Could not send ping: too many pings sent at once if you spam it.",

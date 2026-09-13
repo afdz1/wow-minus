@@ -21,8 +21,8 @@ export const PROFESSIONS_ARTICLE = {
       id: "camping-profession",
       heading: "Camping",
       paragraphs: [
-        "Camping is a profession, not only a First Aid folder. Players place a campfire in the outdoor world to create a campsite. Other adventurers join for vendors, repairs, tradeskill workspaces, and one-hour buffs. You slash-sit by the fire for a few moments first.",
-        "Each player can place one object. Each tradeskill has different objects at different skill levels. Named examples: a sharpening wheel (strength), a tailor faction banner (spirit), an herbalist incense candle (intellect). Those are exclusive with class buffs such as Blessing of Might or Arcane Intellect.",
+        "Camping is a profession, not only a First Aid folder. Players place a campfire in the outdoor world to create a campsite. Other adventurers join for vendors, repairs, tradeskill workspaces, and one-hour buffs. You slash-sit by the fire for a few moments first. Camps are for the wilderness, not town centers. Cooks teach the campfire.",
+        "Blacksmithing objects from the Deep Dive: Sharpening Wheel (skill 20) grants 34 Strength, exclusive with Strength of Earth Totem. Anvil (140) replaces the wheel and keeps its benefits. Master Forge (300) also keeps the wheel’s benefits and is usable for recipes that require it. All camping features share a 1-hour cooldown and need a campfire nearby.",
         "Camping features share a 1-hour cooldown. A campfire is required for the published First Aid Kit. The Legacy perk Permanence extends camp rest benefits by 50%.",
         "Whether Camping has its own skill bar, like First Aid, is unpublished. The First Aid Camping group is the kit you unpack at a fire.",
       ],
@@ -105,8 +105,9 @@ export const PROFESSIONS_ARTICLE = {
       id: "other-professions",
       heading: "Other professions",
       paragraphs: [
-        "Not yet documented with recipe windows: Blacksmithing, Cooking, Enchanting, Engineering, Fishing, Herbalism, Leatherworking, Mining, Skinning, and Tailoring.",
+        "Not yet documented with full recipe windows: Cooking, Enchanting, Engineering, Fishing, Herbalism, Leatherworking, Mining, Skinning, and Tailoring. Blacksmithing has three published plans from the Deep Dive.",
         "The Deep Dive adds over 600 new recipes across all professions, with many existing recipes overhauled, and profession choice meant to matter at low level. Almost all crafted cooking food gives a stat boost.",
+        "Published blacksmith plans: Crusader’s Boots (mail, level 17), Officer’s Pauldrons (plate, level 42), and Enriched Thorium Breastplate (plate, level 57). New reagents on those plans include Pristine Leather, Sandpaper, Sulfuric Acid, Legionite Bar, Heavy Thorium Bar, and Azerothium Bar.",
         "Cooking and Fishing are named on Legacy perks (Master Chef, Luremaster), so those trades exist. Recipe lists are unpublished.",
         "A Legacy perk names crate turn-ins to the Azeroth Commerce Authority and Durotar Supply and Logistics, and a Merchant Favor currency. Those names are on the perk. The rest of that economy is unpublished.",
       ],
