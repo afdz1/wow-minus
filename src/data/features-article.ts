@@ -111,7 +111,7 @@ export const FEATURES_ARTICLE = {
         "The official Features section includes a heading titled System Revamps.",
         "The panel recap lists Camping as a profession: players craft campsites in the outdoor world so other adventurers can stop, contribute through professions, and share campsite buffs.",
         "The recap lists opt-in transmog; modern and Classic visual presets; High-Definition (HD) and Standard-Definition (SD) character-model options for characters, models, and the world; restored Classic animations for HD character models; official gamepad support; and riding-skill updates.",
-        "The client includes a native Controller Map. Bindings use an Xbox-layout pad, the HUD draws button prompts on the action bars, and Controller Info lives in the Main Menu. The pane labels the gamepad option as alpha.",
+        "The client includes a native Controller Map. Bindings use an Xbox-layout pad, the HUD draws button prompts on the action bars, and Controller Info lives in the Main Menu. Official copy labels the gamepad option as alpha. Currently it can be tested on the Skyborne 1–10 experience only, not the dungeon playtest. In the Skyborne starting zone, press any button on the gamepad to switch.",
         "The client includes a retail-style ping wheel in the open world. It posts to chat and rate-limits if too many pings go out at once.",
       ],
     },

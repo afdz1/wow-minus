@@ -7,7 +7,7 @@ import { NEWS } from "@/data/news";
 import { DUNGEONS, RAIDS, ZONES } from "@/data/content";
 import { OFFICIAL } from "@/data/art";
 import { BLUE_POSTS } from "@/data/blue-posts";
-import { CONFIRMED } from "@/data/confirmed";
+import { CONFIRMED, confirmationCover } from "@/data/confirmed";
 import { BlueBadge, BlogTile } from "@/components/BlueBadge";
 import { ShareButton } from "@/components/ShareButton";
 import { pageMeta } from "@/lib/seo";
@@ -31,6 +31,8 @@ export default function HomePage() {
     ["Every Journey Matters", OFFICIAL.features.journey, "Legacy account-wide perks for alts without skipping 1–60.", "/blog/legacy"],
     ["System Revamps", OFFICIAL.features.systems, "Camping profession, Honor, optional transmog, HD/SD models.", "/blog/wow-forever-features#system-revamps"],
   ] as const;
+  const featuredConfirm = CONFIRMED[0];
+  const featuredCover = featuredConfirm ? confirmationCover(featuredConfirm) : undefined;
 
   return (
     <div className="home-page">
@@ -128,34 +130,31 @@ export default function HomePage() {
           <p className="section-lede" style={{ textAlign: "left", margin: "0 0 22px" }}>
             Short in-game facts. Screenshot when we have one.
           </p>
-          {CONFIRMED[0] ? (
+          {featuredConfirm && featuredCover ? (
             <div className="confirm-home">
-              <Link className="shot-link" href={`/confirmed#${CONFIRMED[0].id}`}>
-                <img
-                  src={CONFIRMED[0].image ?? OFFICIAL.features.systems}
-                  alt={CONFIRMED[0].imageAlt ?? CONFIRMED[0].title}
-                />
+              <Link className="shot-link" href={`/confirmed#${featuredConfirm.id}`}>
+                <img src={featuredCover.src} alt={featuredCover.alt} />
               </Link>
               <div className="copy">
                 <div className="confirm-head">
                   <div className="meta">
-                    {CONFIRMED[0].topic} · {CONFIRMED[0].date}
+                    {featuredConfirm.topic} · {featuredConfirm.date}
                   </div>
                   <ShareButton
-                    title={`${CONFIRMED[0].title} — ClassicMinus`}
-                    text={CONFIRMED[0].fact}
-                    path={`/confirmed#${CONFIRMED[0].id}`}
+                    title={`${featuredConfirm.title} — ClassicMinus`}
+                    text={featuredConfirm.fact}
+                    path={`/confirmed#${featuredConfirm.id}`}
                   />
                 </div>
                 <h3>
-                  <Link href={`/confirmed#${CONFIRMED[0].id}`}>{CONFIRMED[0].title}</Link>
+                  <Link href={`/confirmed#${featuredConfirm.id}`}>{featuredConfirm.title}</Link>
                 </h3>
-                <p style={{ margin: 0, color: "var(--muted)" }}>{CONFIRMED[0].fact}</p>
-                {CONFIRMED[0].credit ? (
+                <p style={{ margin: 0, color: "var(--muted)" }}>{featuredConfirm.fact}</p>
+                {featuredCover.credit ? (
                   <p className="confirm-credit">
                     Screenshot:{" "}
-                    <a href={CONFIRMED[0].credit.href} target="_blank" rel="noopener noreferrer">
-                      {CONFIRMED[0].credit.label}
+                    <a href={featuredCover.credit.href} target="_blank" rel="noopener noreferrer">
+                      {featuredCover.credit.label}
                     </a>
                   </p>
                 ) : null}

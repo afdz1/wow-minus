@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Hero } from "@/components/Hero";
 import { CLASSES, DUNGEONS, RAIDS, ZONES } from "@/data/content";
 import { OFFICIAL } from "@/data/art";
-import { CONFIRMED } from "@/data/confirmed";
+import { CONFIRMED, confirmationCover } from "@/data/confirmed";
 import { ZAM_ICON } from "@/data/art";
 import { pageMeta } from "@/lib/seo";
 
@@ -22,7 +22,12 @@ export default function DatabasePage() {
       </Hero>
       <div className="wrap db-grid">
         {[
-          ["/confirmed", "Confirmed", CONFIRMED[0]?.image ?? OFFICIAL.features.systems, "In-game screenshots"],
+          [
+            "/confirmed",
+            "Confirmed",
+            CONFIRMED[0] ? confirmationCover(CONFIRMED[0]).src : OFFICIAL.features.systems,
+            "In-game screenshots",
+          ],
           ["/database/zones", "Zones", OFFICIAL.zones.ashenvale1, `${ZONES.length} regions`],
           ["/database/dungeons", "Dungeons", OFFICIAL.features.stories, `${DUNGEONS.length} new at launch`],
           ["/database/raids", "Raids", OFFICIAL.zones.ashenvale2, `${RAIDS.length} unlock Dec 9`],

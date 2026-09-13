@@ -636,6 +636,60 @@ a.feature-card:hover { color: inherit; }
 .confirm-card ul { margin: 0 0 16px; padding-left: 18px; color: var(--muted); }
 .confirm-card li { margin: 0 0 6px; }
 .confirm-card .article-figure.shot { border: 0; border-radius: 0; border-top: 1px solid var(--line); }
+.confirm-slide { position: relative; background: #0a0806; }
+.confirm-slide img { width: 100%; height: auto; object-fit: contain; display: block; }
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: rgba(10, 8, 6, 0.72);
+  color: var(--gold2);
+  border: 1px solid rgba(232, 193, 90, 0.45);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  font-family: var(--font-sans), sans-serif;
+}
+.carousel-nav:hover, .carousel-nav:focus-visible {
+  border-color: var(--gold2);
+  color: #fff;
+}
+.carousel-nav.prev { left: 12px; }
+.carousel-nav.next { right: 12px; }
+.carousel-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 7px;
+}
+.carousel-dots button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid rgba(232, 193, 90, 0.7);
+  cursor: pointer;
+}
+.carousel-dots button.on {
+  background: var(--gold2);
+  border-color: var(--gold2);
+}
+.carousel-count {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #fff;
+  background: rgba(10, 8, 6, 0.72);
+  padding: 3px 7px;
+}
 .confirm-home {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);

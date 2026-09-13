@@ -1,5 +1,6 @@
 import { Hero } from "@/components/Hero";
 import { ShareButton } from "@/components/ShareButton";
+import { ShotCarousel } from "@/components/ShotCarousel";
 import { CONFIRMED } from "@/data/confirmed";
 import { OFFICIAL } from "@/data/art";
 import type { Metadata } from "next";
@@ -46,19 +47,7 @@ export default function ConfirmedPage() {
                   </ul>
                 ) : null}
               </div>
-              {c.image ? (
-                <figure className="article-figure shot">
-                  <img src={c.image} alt={c.imageAlt ?? c.title} />
-                  {c.credit ? (
-                    <figcaption>
-                      Screenshot:{" "}
-                      <a href={c.credit.href} target="_blank" rel="noopener noreferrer">
-                        {c.credit.label}
-                      </a>
-                    </figcaption>
-                  ) : null}
-                </figure>
-              ) : null}
+              {c.shots.length ? <ShotCarousel shots={c.shots} label={c.title} /> : null}
             </article>
           ))}
         </div>
@@ -66,4 +55,3 @@ export default function ConfirmedPage() {
     </>
   );
 }
-
