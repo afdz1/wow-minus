@@ -20,7 +20,7 @@ export default function DungeonsPage() {
       <div className="wrap db-grid">
         {DUNGEONS.map((d) => (
           <article key={d.slug} className="db-card">
-            <img src={d.image} alt="" />
+            <img src={d.image} alt={d.name} />
             <div className="pad">
               <div className="meta">
                 {d.levels} · {d.location}

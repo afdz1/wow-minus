@@ -1,5 +1,7 @@
 import { OFFICIAL } from "./art";
 
+const DUNGEON_SHOT = (file: string) => `/images/dungeons/${file}`;
+
 export type Zone = {
   slug: string;
   name: string;
@@ -107,19 +109,19 @@ export const ZONES: Zone[] = [
 ];
 
 export const DUNGEONS = [
-  { slug: "hall-of-thanes", name: "Hall of Thanes", levels: "13–18", location: "Ironforge", image: OFFICIAL.features.stories, blurb: "Alliance 13–18 call to protect dwarven treasures beneath Ironforge. Horde can enter for the loot." },
-  { slug: "ruins-of-lordaeron", name: "Ruins of Lordaeron", levels: "15–20", location: "Tirisfal Glades", image: OFFICIAL.features.paths, blurb: "Horde 15–20 reclaim the ruins. Alliance can find a way in." },
-  { slug: "city-of-dalaran", name: "City of Dalaran", levels: "20–35", location: "Alterac / Dalaran", image: OFFICIAL.features.power, blurb: "The old barrier has fallen. Kirin Tor trouble inside the restored city." },
-  { slug: "whelgars-excavation", name: "Whelgar's Excavation", levels: "24–29", location: "Wetlands", image: OFFICIAL.zones.dustwallow, blurb: "Explorers’ League dig site above Whelgar’s Excavation." },
-  { slug: "drowned-city", name: "Drowned City", levels: "35–40", location: "Stranglethorn Vale", image: OFFICIAL.zones.darkshore, blurb: "Sunken troll ruins off the coast. Naga and pirates." },
-  { slug: "kroldok-stronghold", name: "Krol'dok Stronghold", levels: "35–40", location: "Riverglades", image: OFFICIAL.features.expanses, blurb: "Massive ogre fortress. Outdoor dungeon meant as a Scarlet Monastery alternative." },
-  { slug: "alcaz-prison", name: "Alcaz Prison", levels: "48–53", location: "Alcaz Island", image: OFFICIAL.zones.felwood, blurb: "A prison used by the Defias to hold important captives." },
-  { slug: "blackmaw-hold", name: "Blackmaw Hold", levels: "55–60", location: "Kalimdor", image: OFFICIAL.zones.ashenvale1, blurb: "Sprawling underground furbolg city. Corruption in the depths." },
-  { slug: "shapers-terrace", name: "Shaper's Terrace", levels: "58–60", location: "Un'Goro Crater", image: OFFICIAL.features.journey, blurb: "Titan mysteries on the slopes of Un’Goro." },
+  { slug: "hall-of-thanes", name: "Hall of Thanes", levels: "13–18", location: "Ironforge", image: OFFICIAL.features.stories, blurb: "Royal burial chambers beneath Ironforge. Intruders have disturbed the tombs. Ghostly whispers in the corridors. Horde can find a way in." },
+  { slug: "ruins-of-lordaeron", name: "Ruins of Lordaeron", levels: "15–20", location: "Tirisfal Glades", image: OFFICIAL.features.paths, blurb: "Reclaim the city from lingering Scourge. A necromancer is preparing another attack. Alliance can find a way in." },
+  { slug: "city-of-dalaran", name: "City of Dalaran", levels: "28–33", location: "Alterac / Dalaran", image: DUNGEON_SHOT("dalaran.jpg"), blurb: "The barrier is down. Malfunctioning enchantments, constructs, and demonic activity. The city is also a wider space to explore." },
+  { slug: "whelgars-excavation", name: "Wetlands Excavation Site", levels: "24–29", location: "Wetlands", image: DUNGEON_SHOT("excavation-site.jpg"), blurb: "Mysterious lights, drifting mist, and rogue Titan constructs above Whelgar’s Excavation." },
+  { slug: "drowned-city", name: "Drowned City", levels: "35–40", location: "Stranglethorn Vale", image: DUNGEON_SHOT("drowned-city.jpg"), blurb: "Ancient troll ruins risen off the coast. Trolls, naga, and stranded pirates." },
+  { slug: "kroldok-stronghold", name: "Krol'dok Stronghold", levels: "40–55", location: "Riverglades", image: OFFICIAL.features.expanses, blurb: "Enormous outdoor ogre dungeon. Kidnappings, raids on nearby settlements, and nighttime chanting." },
+  { slug: "alcaz-prison", name: "Alcaz Island Prison", levels: "48–53", location: "Alcaz Island", image: DUNGEON_SHOT("alcaz-prison.jpg"), blurb: "Previously inaccessible. Defias and naga fighting inside. Tied to rumors of Varian Wrynn’s captivity." },
+  { slug: "blackmaw-hold", name: "Blackmaw Hold", levels: "55–60", location: "Azshara", image: DUNGEON_SHOT("blackmaw-hold.jpg"), blurb: "Furbolg city behind Azshara’s mysterious gate. Corruption in the depths. Tunnels lead toward the Barrow Deeps." },
+  { slug: "shapers-terrace", name: "Shaper's Terrace", levels: "58–60", location: "Un'Goro Crater", image: OFFICIAL.features.journey, blurb: "Titan facility in the hills. Ancient machinery, power crystals, and uncontrolled wildlife." },
 ];
 
 export const RAIDS = [
-  { slug: "barrow-deeps", name: "Barrow Deeps", size: "10", date: "Dec 9, 2026", image: OFFICIAL.zones.ashenvale2, blurb: "Night Elf prison for dangerous captives. Three world entrances. Max-level 10-player challenge." },
+  { slug: "barrow-deeps", name: "Barrow Deeps", size: "10", date: "Dec 9, 2026", image: OFFICIAL.zones.ashenvale2, blurb: "Night Elf prison for dangerous captives. Three world entrances. Blackmaw Hold’s tunnels lead toward it. Max-level 10-player challenge." },
   { slug: "hyjal-summit", name: "Hyjal Summit", size: "20", date: "Dec 9, 2026", image: OFFICIAL.zones.ashenvale1, blurb: "20-player raid on Mount Hyjal. New tier sets and a legendary reward still under wraps." },
   { slug: "onyxias-lair", name: "Onyxia's Lair", size: "40", date: "Dec 9, 2026", image: OFFICIAL.features.power, blurb: "The classic broodmother remains a 40-player raid." },
 ];
