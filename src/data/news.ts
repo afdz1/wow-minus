@@ -1,7 +1,9 @@
 import { OFFICIAL } from "./art";
+import { DEEP_DIVE_ARTICLE } from "./deep-dive-article";
 import { FEATURES_ARTICLE } from "./features-article";
 import { PROFESSIONS_ARTICLE } from "./first-aid-article";
 import { LEGACY_ARTICLE } from "./legacy-article";
+import { WHATS_NEXT_ARTICLE } from "./whats-next-article";
 import { VIDEOS as v, cite, videoPage } from "./video-sources";
 
 export const LAUNCH = new Date("2026-11-04T23:00:00.000Z");
@@ -49,6 +51,8 @@ export type NewsArticle = {
 };
 
 export const NEWS: NewsArticle[] = [
+  DEEP_DIVE_ARTICLE,
+  WHATS_NEXT_ARTICLE,
   LEGACY_ARTICLE,
   PROFESSIONS_ARTICLE,
   FEATURES_ARTICLE,
@@ -86,9 +90,11 @@ export const NEWS: NewsArticle[] = [
     image: OFFICIAL.zones.ashenvale1,
     body: [
       "The official Forever site leads with three zones. Zephras Isle is a floating starting experience for the Skyborne, levels 1–12, with architecture inspired by Skywall. Access to the race and this starting storyline requires the Skyborne Heroic Pack or a higher edition.",
+      `The spoken What’s Next panel: Highborne exiles forged a pact with wind spirits and built in Skywall. Thunderfury and Prince Thunderaan are named as classic precedent. The air spirits that protected the islands have vanished; structures are failing. Skyborne are split — some seek the wind spirits, some the arcane of their ancestors, some darker powers. ${cite(v.whatsNext, 918, "What's Next, 15:18")}`,
       "Riverglades is a sprawling Eastern Kingdoms landscape that shifts from lush hillsides to ruined keeps. Blizzard’s What’s Next panel placed more than 150 quests here in the mid-30s to mid-40s, with humans, orcs, and ogres on the frontier, a neutral goblin port with extra travel routes, and Krol’dok Stronghold, a 40–55 outdoor ogre dungeon. The story is living there, not saving Azeroth.",
+      `Spoken geography: the eastern coast between Redridge, Burning Steppes, the Badlands, and Swamp of Sorrows. Human forces once pursued retreating orcs here; help never came, and descendants still live on the frontier. Gnolls, goblins, and murlocs compete alongside humans, orcs, and ogres. ${cite(v.whatsNext, 793, "What's Next, 13:13")}`,
       "Mount Hyjal is being expanded into an endgame leveling zone after Archimonde’s defeat, with solo and group content, reputations, quests, and rewards. Threats old and new stalk the slopes. Hyjal Summit (20-player) sits here, and one of three Barrow Deeps raid entrances is also tied to the mountain.",
-      "Shen’dralas fills the gap between Mulgore and Desolace, tying the Shen’dralar, Dire Maul, and centaur tribes into a return visit for Maraudon and the Razorfen hills.",
+      "Shen’dralas fills the gap between Mulgore and Desolace, tying the Shen’dralar, Dire Maul, Prince Tortheldrin, and Gelkis and Magram centaur storylines, with new reasons to visit Maraudon and Razorfen Downs.",
       `WillE’s panel recap places Riverglades against the Burning Steppes, Swamp of Sorrows, and Redridge, and calls it “a pretty enormous zone.” He states Hyjal is framed so that players go through Darkwhisper Gorge, and asks whether the elites on that road will be retuned. ${cite(v.wille, 131, "WillE, 2:11")} ${cite(v.wille, 114, "WillE, 1:54")}`,
       `Slesh’s solo demo on Zephras names the starting city Valinar. He reached a Darnassus-style boat toward the mainland and hit an invisible wall. A dark forest on the island is called out for the updated lighting pass. ${cite(v.slesh, 199, "Slesh, 3:19")}`,
       `MetaGoblin’s trailer breakdown shows a moving boat at the Southshore lighthouse, an aerial route toward Skyborne land with Dalaran in the distance, multiple transport lines leaving Zephras, and a Skyborne route visible from Mulgore. Those stills are trailer footage, not a published travel map. ${cite(v.meta, 20, "MetaGoblin, 0:20")} ${cite(v.meta, 168, "MetaGoblin, 2:48")} ${cite(v.meta, 344, "MetaGoblin, 5:44")}`,
@@ -99,6 +105,7 @@ export const NEWS: NewsArticle[] = [
       videoPage(v.wille),
       videoPage(v.slesh),
       videoPage(v.meta),
+      videoPage(v.whatsNext),
     ],
   },
   {
@@ -113,6 +120,8 @@ export const NEWS: NewsArticle[] = [
       "Launch includes nine new dungeons: Hall of Thanes beneath Ironforge (13–18, royal burial chambers, disturbed tombs, ghosts; Horde can find a way in), Ruins of Lordaeron (15–20, lingering Scourge and a necromancer preparing another attack; Alliance can find a way in), Wetlands Excavation Site above Whelgar’s (24–29, lights, mist, rogue Titan constructs), City of Dalaran (28–33 dungeon, barrier down, constructs and demonic activity, plus a wider city to explore), The Drowned City off Stranglethorn (35–40, a lost troll kingdom risen after thousands of years; I'lalai, rival explorers, ancient horrors, and the serpent king Min'loth), Krol’dok Stronghold (40–55 outdoor ogre dungeon in Riverglades: kidnappings, raids, nighttime chanting), Alcaz Island Prison (48–53, Defias and naga, rumors of Varian Wrynn’s captivity), Blackmaw Hold (55–60 furbolg city behind Azshara’s gate; tunnels toward Barrow Deeps), and Shaper’s Terrace in Un’Goro (58–60 Titan facility with machinery, power crystals, and wildlife).",
       "Raids do not open on day one. On December 9, 2026 Blizzard unlocks Barrow Deeps (10-player), Hyjal Summit (20-player), and Onyxia’s Lair as a 40-player encounter. Barrow Deeps has three world entrances and is described as a Night Elf prison for especially dangerous captives. Blackmaw Hold’s tunnels lead toward that raid.",
       "A 15 vs 15 battleground, Darkspear Islands, mixes Arathi Basin-style flag captures with Eye of the Storm-like layout off the coast of Kalimdor.",
+      `Spoken panel notes: Dalaran has a roundabout way in because a ragtag group helping the Kirin Tor would look bad. Lordaeron still holds family heirlooms; Alliance sneaks. Hall of Thanes suspects Dark Irons; Horde sneaks. A pirate ship crashed into The Drowned City. Krol’dok twilight chanting may be cultists. Shaper’s Terrace is compared to Sholazar and spoken as “a whole lot like Jurassic Park.” ${cite(v.whatsNext, 1173, "What's Next, 19:33")} ${cite(v.whatsNext, 1410, "What's Next, 23:30")} ${cite(v.whatsNext, 1543, "What's Next, 25:43")}`,
+      `Barrow Deeps: “Rumor has it, an infamous demon hunter was once kept here.” Hyjal Summit: someone is draining power from the land around the summit; legendary power is named as a reward. Darkspear Islands: Horde with the Darkspear trolls; Alliance reports to the Theramore Expeditionary Force. ${cite(v.whatsNext, 1643, "What's Next, 27:23")} ${cite(v.whatsNext, 1700, "What's Next, 28:20")} ${cite(v.whatsNext, 1764, "What's Next, 29:24")}`,
       `WillE states Hall of Thanes is the Ironforge door players have glitched or that Cataclysm later opened, and that both factions can complete it, with Horde using an alternative entrance. He describes City of Dalaran as a mid-level dungeon and also “a bit more of an open-world zone.” ${cite(v.wille, 161, "WillE, 2:41")} ${cite(v.wille, 172, "WillE, 2:52")}`,
       `Xaryu’s show-floor dungeon run is labeled Drown City / Sunken Hollow. Trash includes fears and a shark pack. A first-boss emote is “It’s time for a little blood.” Loot called out: Giant Club of the Boar; Twilight Armor of the Eagle; Maze of Healing, read as 53 healing and 14 intellect — Xaryu says those stats look like a typo. The demo client had no dungeon map. ${cite(v.xaryu, 397, "Xaryu, 6:37")} ${cite(v.xaryu, 996, "Xaryu, 16:36")} ${cite(v.xaryu, 923, "Xaryu, 15:23")}`,
       `Ace’s recap of the raid slide: new raids shown so far are 10-player or 20-player; Onyxia stays 40. WillE notes the roadmap still lists Onyxia as 40 and asks whether 10 and 20 are hard caps or flexible — unanswered in these videos. ${cite(v.ace, 114, "Ace, 1:54")} ${cite(v.wille, 328, "WillE, 5:28")}`,
@@ -120,6 +129,7 @@ export const NEWS: NewsArticle[] = [
     ],
     sources: [
       { label: "Blizzard panel recap", href: "https://news.blizzard.com/en-us/article/24303862/world-of-warcraft-forever-whats-next-panel-recap" },
+      videoPage(v.whatsNext),
       videoPage(v.wille),
       videoPage(v.xaryu),
       videoPage(v.ace),
@@ -162,12 +172,14 @@ export const NEWS: NewsArticle[] = [
     tag: "Systems",
     image: OFFICIAL.features.systems,
     body: [
-      "Camping is a profession. Players place campsites in the outdoor world. Other adventurers stop, contribute through tradeskills, share buffs, and talk. First Aid also crafts a First Aid Kit used at a campfire; camping features share a 1-hour cooldown.",
+      "Camping is a profession. Players place campsites in the outdoor world. Other adventurers stop, contribute through tradeskills, share buffs, and talk. You sit a moment before the buffs. First Aid also crafts a First Aid Kit used at a campfire; camping features share a 1-hour cooldown.",
       "The Legacy system grants account-wide perks for leveling additional characters without letting alts skip the journey to 60. Challenges award one point each. Those points buy Professions, Adventure, and Resourcefulness bonuses, and the same total fills a cosmetic track. Character creation uses a Full Name: required Main Name and Secondary Name, not Name-Realm. You can hide the secondary name.",
-      "Transmog is opt-in: you choose whether you see your own transmog and whether you see other players’ transmog. You can leave it off and see original gear on everyone.",
-      "Visual presets include modern and Classic looks. HD and SD options cover characters, models, and the world. HD models keep restored Classic animations. Gamepad support and riding-skill updates are on the systems list. Rendering upgrades — flowing rivers in Elwynn, mist on Darkshore, moonlight in Ashenvale — keep original silhouettes.",
+      "Transmog is opt-in: you choose whether you see your own transmog and whether you see other players’ transmog. You can leave it off and see original gear on everyone — spoken as “clown suits for everyone.”",
+      "The Deep Dive: dungeon bind-on-pickup greens and blues grant appearances to the whole group; epic and raid looks go only to the player who binds the item. You do not pick a realm. You choose a ruleset — Normal, PvP, Roleplay, or Hardcore after launch. Legacy spend cap is 16 points; earn cap is 65 for the cosmetic track.",
+      "Visual presets include modern and Classic looks. HD and SD is a game-wide toggle for your character, NPCs, and other players together. HD models keep restored Classic animations — “no bouncy dwarves.” Gamepad support and riding-skill updates are on the systems list. Rendering upgrades include rivers in Elwynn, fog rolling into Duskwood at night, and moonlight in Ashenvale.",
       "Native gamepad support is in the client. Controller Map shows Xbox-layout bindings, the HUD draws button prompts on the action bars, and Controller Info lives in the Main Menu. Official copy labels the option as alpha. Currently it can be tested on the Skyborne 1–10 experience only, not the dungeon playtest. In the Skyborne starting zone, press any button on the gamepad to switch.",
       "A retail-style ping wheel is in the client. It works in the open world, prints Look here to chat, and errors with Could not send ping: too many pings sent at once if you spam it.",
+      `The spoken What’s Next panel: you sit a moment before camp buffs, so people might talk. Transmog off is “clown suits for everyone.” Further Classic-specific transmog rules, plus more camping and Legacy, were deferred to the Deep Dive. HD/SD is one toggle for you, NPCs, and other players. ${cite(v.whatsNext, 2118, "What's Next, 35:18")} ${cite(v.whatsNext, 2293, "What's Next, 38:13")} ${cite(v.whatsNext, 2388, "What's Next, 39:48")}`,
       `WillE describes Camping as usable “almost anywhere in the open world,” with other players stopping to craft for the camp and talk. ${cite(v.wille, 376, "WillE, 6:16")}`,
       `Legacy is broken into six challenge tabs — classes, trade skills, PvP, adventure, dungeons, and raids — covering exploring, reputations, and the rest of that list. Points carry to alts. The perk tree spends those points; cosmetics unlock from total points earned. Slesh’s demo pane redeems points for cosmetics and mounts. Xaryu compares the UI to achievements. ${cite(v.wille, 409, "WillE, 6:49")} ${cite(v.ace, 408, "Ace, 6:48")} ${cite(v.slesh, 114, "Slesh, 1:54")} ${cite(v.xaryu, 745, "Xaryu, 12:25")}`,
       `Xaryu’s PvP tab on the demo: unranked, with a rank cap that increases each week up to 24,750 for Rank 14. WillE infers from the 2027 “PvP season refresh” line that Rank 14 may not last; that is not what the demo tab shows. ${cite(v.xaryu, 297, "Xaryu, 4:57")} ${cite(v.wille, 513, "WillE, 8:33")}`,
@@ -177,6 +189,7 @@ export const NEWS: NewsArticle[] = [
     ],
     sources: [
       { label: "Blizzard panel recap", href: "https://news.blizzard.com/en-us/article/24303862/world-of-warcraft-forever-whats-next-panel-recap" },
+      videoPage(v.whatsNext),
       videoPage(v.wille),
       videoPage(v.ace),
       videoPage(v.slesh),

@@ -8,10 +8,10 @@ export const LEGACY_ARTICLE = {
   author: "ClassicMinus Staff",
   tag: "Classic-",
   image: OFFICIAL.features.journey,
-  note: "ClassicMinus Legacy ledger from the BlizzCon 2026 floor demo. Challenge tabs, perk ranks, and cosmetics are demo pane text. How the perk cap grows is unpublished.",
+  note: "ClassicMinus Legacy ledger from the BlizzCon 2026 floor demo and Blizzard’s Sunday Deep Dive. Challenge tabs, perk ranks, and cosmetics are demo pane text. Spend and earn caps come from the Deep Dive.",
   body: [
     "Legacy is the alt system. Challenges across the account award Legacy points. Those points buy account-wide perks, and the same total also fills a cosmetic track. Alts still play 1–60.",
-    "Each completed challenge awards one Legacy point. Points spend in a talent-style tree with three branches: Professions, Adventure, and Resourcefulness. Most nodes are passive. Dedicated Study is a long-cast cooldown. None of the shown bonuses are combat rotations. Some nodes have multiple ranks. There is a cap on how many perks you can unlock; how that cap grows is unpublished.",
+    "Each completed challenge awards one Legacy point. Points spend in a talent-style tree with three branches: Professions, Adventure, and Resourcefulness. Most nodes are passive. Dedicated Study is a long-cast cooldown. None of the shown bonuses are combat rotations. Some nodes have multiple ranks. You can spend 16 points on perks. You can earn up to 65 points; extras fill the cosmetic track.",
     "Cosmetic unlocks use total points earned, not leftover unspent points.",
   ],
   sections: [
@@ -64,10 +64,11 @@ export const LEGACY_ARTICLE = {
       ],
     },
     {
-      id: "unpublished",
-      heading: "Unpublished",
+      id: "caps",
+      heading: "Caps",
       paragraphs: [
-        "The perk-unlock cap and how it progresses are unpublished.",
+        "The Deep Dive states the spend cap is 16 perk points and the earn cap is 65 for the cosmetic track. New challenges and perks are planned each patch. Benefits are account-wide, including characters on different servers.",
+        "Spoken deep nodes not on the demo pane: more scarce materials from mining, herbalism, and skinning; class abilities that no longer consume reagents; camping objects that cost no reagents.",
         "Whether Merchant Favor and the named crate vendors are a full Forever economy, or only leftover tooltip names, is unpublished. The perk text uses those names.",
         "Talent points starting at level 9 is a purchased Legacy node, not the default character. The calculator still treats 51 points from level 10 as the baseline.",
       ],

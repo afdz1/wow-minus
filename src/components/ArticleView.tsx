@@ -61,7 +61,7 @@ export function ArticleView({ article }: { article: NewsArticle }) {
       </Hero>
       <div className="wrap article">
         {article.note ? (
-          <div className="origin-note community">
+          <div className={hasCommunitySources(article.sources) ? "origin-note community" : "origin-note"}>
             <p>{article.note}</p>
           </div>
         ) : hasBlueSources(article.sources) && hasCommunitySources(article.sources) ? (

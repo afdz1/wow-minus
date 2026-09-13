@@ -66,6 +66,12 @@ export const VIDEOS = {
     publisher: "Sodapoppin",
     date: "2026-09-12",
   },
+  whatsNext: {
+    id: "OEX-i55We5c",
+    title: "World of Warcraft: Forever - What's Next Panel | BlizzCon 2026",
+    publisher: "World of Warcraft",
+    date: "2026-09-13",
+  },
 } as const satisfies Record<string, VideoRef>;
 
 export function watch(id: string, seconds?: number) {

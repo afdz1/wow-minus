@@ -21,7 +21,7 @@ export const ZONES: Zone[] = [
     image: OFFICIAL.skyborne,
     video: OFFICIAL.videos.zephras,
     blurb:
-      "Once a secluded island oasis in the sky, Zephras Isle now welcomes the next generation of WoW’s newest race – the Skyborne – to protect this floating island and secure its future.",
+      "Once a secluded island oasis in the sky. Highborne exiles forged a pact with wind spirits and built in Skywall. The spirits have vanished; structures fail; Skyborne are split over what comes next. Levels 1–12.",
   },
   {
     slug: "riverglades",
@@ -31,7 +31,7 @@ export const ZONES: Zone[] = [
     image: OFFICIAL.features.expanses,
     video: OFFICIAL.videos.riverglades,
     blurb:
-      "A sprawling landscape in the Eastern Kingdom which shifts from lush hillsides to ruined keeps of old. Frontier rivers, trade routes, a neutral goblin port, 150+ quests from the mid-30s to mid-40s.",
+      "Frontier between Redridge, Burning Steppes, the Badlands, and Swamp of Sorrows. Rivers, trade routes, a neutral goblin port, 150+ quests from the mid-30s to mid-40s. Humans, orcs, ogres, gnolls, goblins, and murlocs.",
   },
   {
     slug: "mount-hyjal",
@@ -50,7 +50,7 @@ export const ZONES: Zone[] = [
     continent: "Kalimdor",
     image: OFFICIAL.zones.mulgore,
     blurb:
-      "A long-hidden mystery between Mulgore and Desolace, tied to the Shen’dralar, Eldre’Thalas, Dire Maul, and the centaur tribes of the region.",
+      "Ruins between Mulgore and Desolace. Shen’dralar, Eldre’Thalas, Dire Maul, and Prince Tortheldrin. Gelkis and Magram storylines continue, with new reasons to visit Maraudon and Razorfen Downs.",
   },
   {
     slug: "ashenvale",
@@ -109,20 +109,20 @@ export const ZONES: Zone[] = [
 ];
 
 export const DUNGEONS = [
-  { slug: "hall-of-thanes", name: "Hall of Thanes", levels: "13–18", location: "Ironforge", image: OFFICIAL.features.stories, blurb: "Royal burial chambers beneath Ironforge. Intruders have disturbed the tombs. Ghostly whispers in the corridors. Horde can find a way in." },
-  { slug: "ruins-of-lordaeron", name: "Ruins of Lordaeron", levels: "15–20", location: "Tirisfal Glades", image: OFFICIAL.features.paths, blurb: "Reclaim the city from lingering Scourge. A necromancer is preparing another attack. Alliance can find a way in." },
-  { slug: "city-of-dalaran", name: "City of Dalaran", levels: "28–33", location: "Alterac / Dalaran", image: DUNGEON_SHOT("dalaran.jpg"), blurb: "The barrier is down. Malfunctioning enchantments, constructs, and demonic activity. The city is also a wider space to explore." },
-  { slug: "whelgars-excavation", name: "Wetlands Excavation Site", levels: "24–29", location: "Wetlands", image: DUNGEON_SHOT("excavation-site.jpg"), blurb: "Mysterious lights, drifting mist, and rogue Titan constructs above Whelgar’s Excavation." },
-  { slug: "drowned-city", name: "The Drowned City", levels: "35–40", location: "Stranglethorn Vale", image: DUNGEON_SHOT("drowned-city.jpg"), blurb: "After thousands of years, a lost troll kingdom has risen off the coast of Stranglethorn Vale. Venture into the depths of I'lalai where you will battle rival explorers, face ancient horrors, and uncover the secrets of the legendary serpent king Min'loth." },
-  { slug: "kroldok-stronghold", name: "Krol'dok Stronghold", levels: "40–55", location: "Riverglades", image: OFFICIAL.features.expanses, blurb: "Enormous outdoor ogre dungeon. Kidnappings, raids on nearby settlements, and nighttime chanting." },
-  { slug: "alcaz-prison", name: "Alcaz Island Prison", levels: "48–53", location: "Alcaz Island", image: DUNGEON_SHOT("alcaz-prison.jpg"), blurb: "Previously inaccessible. Defias and naga fighting inside. Tied to rumors of Varian Wrynn’s captivity." },
-  { slug: "blackmaw-hold", name: "Blackmaw Hold", levels: "55–60", location: "Azshara", image: DUNGEON_SHOT("blackmaw-hold.jpg"), blurb: "Furbolg city behind Azshara’s mysterious gate. Corruption in the depths. Tunnels lead toward the Barrow Deeps." },
-  { slug: "shapers-terrace", name: "Shaper's Terrace", levels: "58–60", location: "Un'Goro Crater", image: OFFICIAL.features.journey, blurb: "Titan facility in the hills. Ancient machinery, power crystals, and uncontrolled wildlife." },
+  { slug: "hall-of-thanes", name: "Hall of Thanes", levels: "13–18", location: "Ironforge", image: OFFICIAL.features.stories, blurb: "Royal burial chambers beneath Ironforge. Dark Irons are suspected. Ghostly whispers. Alliance is the natural fit; Horde sneaks or carves a way in." },
+  { slug: "ruins-of-lordaeron", name: "Ruins of Lordaeron", levels: "15–20", location: "Tirisfal Glades", image: OFFICIAL.features.paths, blurb: "Forsaken reclaim the city. Family heirlooms still inside. A necromancer is preparing an attack on another city. Alliance has to sneak in." },
+  { slug: "city-of-dalaran", name: "City of Dalaran", levels: "28–33", location: "Alterac / Dalaran", image: DUNGEON_SHOT("dalaran.jpg"), blurb: "Kirin Tor barrier is down. Enchantments backfiring, constructs haywire, demonic energy, and cats everywhere. A whole city to explore, with a roundabout way in." },
+  { slug: "whelgars-excavation", name: "Wetlands Excavation Site", levels: "24–29", location: "Wetlands", image: DUNGEON_SHOT("excavation-site.jpg"), blurb: "A site trapped in time above Whelgar’s. Titan constructs, mist from the mountains, flashing lights. Explorers’ League is interested." },
+  { slug: "drowned-city", name: "The Drowned City", levels: "35–40", location: "Stranglethorn Vale", image: DUNGEON_SHOT("drowned-city.jpg"), blurb: "After thousands of years, a lost troll kingdom has risen off the coast of Stranglethorn Vale. Venture into the depths of I'lalai where you will battle rival explorers, face ancient horrors, and uncover the secrets of the legendary serpent king Min'loth. Trolls, naga, and a crashed pirate ship." },
+  { slug: "kroldok-stronghold", name: "Krol'dok Stronghold", levels: "40–55", location: "Riverglades", image: OFFICIAL.features.expanses, blurb: "Enormous outdoor ogre dungeon. Kidnappings, raids on nearby settlements, and twilight chanting that may be cultists." },
+  { slug: "alcaz-prison", name: "Alcaz Island Prison", levels: "48–53", location: "Alcaz Island", image: DUNGEON_SHOT("alcaz-prison.jpg"), blurb: "Previously inaccessible. Defias fighting naga inside. Tied to rumors of Varian Wrynn’s captivity." },
+  { slug: "blackmaw-hold", name: "Blackmaw Hold", levels: "55–60", location: "Azshara", image: DUNGEON_SHOT("blackmaw-hold.jpg"), blurb: "Furbolg city behind Azshara’s mysterious gate. Corruption in the depths. Tunnels can lead into the Barrow Deeps." },
+  { slug: "shapers-terrace", name: "Shaper's Terrace", levels: "58–60", location: "Un'Goro Crater", image: OFFICIAL.features.journey, blurb: "Titan facility in the hills, compared to Sholazar from Wrath Classic. Ancient machinery, power crystals, and wildlife running amok." },
 ];
 
 export const RAIDS = [
-  { slug: "barrow-deeps", name: "Barrow Deeps", size: "10", date: "Dec 9, 2026", image: OFFICIAL.zones.ashenvale2, blurb: "Night Elf prison for dangerous captives. Three world entrances. Blackmaw Hold’s tunnels lead toward it. Max-level 10-player challenge." },
-  { slug: "hyjal-summit", name: "Hyjal Summit", size: "20", date: "Dec 9, 2026", image: OFFICIAL.zones.ashenvale1, blurb: "20-player raid on Mount Hyjal. New tier sets and a legendary reward still under wraps." },
+  { slug: "barrow-deeps", name: "Barrow Deeps", size: "10", date: "Dec 9, 2026", image: OFFICIAL.zones.ashenvale2, blurb: "Night Elf prison for dangerous captives. Rumor of an infamous demon hunter once kept here. Three world entrances. Blackmaw Hold’s tunnels lead toward it." },
+  { slug: "hyjal-summit", name: "Hyjal Summit", size: "20", date: "Dec 9, 2026", image: OFFICIAL.zones.ashenvale1, blurb: "20-player raid on Mount Hyjal. Someone is draining power from the land around the summit. New tier sets and a legendary reward. Snowy peaks, a river through elven ruins, ghosts of the Third War." },
   { slug: "onyxias-lair", name: "Onyxia's Lair", size: "40", date: "Dec 9, 2026", image: OFFICIAL.features.power, blurb: "The classic broodmother remains a 40-player raid." },
 ];
 

@@ -225,7 +225,7 @@
           ],
           [
             "Find Treasure",
-            "Track treasure chests.",
+            "Track treasure chests. Does not conflict with Find Herbs, Find Minerals, or Tracking Beasts.",
             "racial_dwarf_findtreasure"
           ],
           [

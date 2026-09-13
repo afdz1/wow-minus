@@ -21,7 +21,8 @@ export const PROFESSIONS_ARTICLE = {
       id: "camping-profession",
       heading: "Camping",
       paragraphs: [
-        "Camping is a profession, not only a First Aid folder. Players place campsites in the outdoor world. Other adventurers can join, use their tradeskills, share buffs, and talk. Camps are the gathering point outside cities.",
+        "Camping is a profession, not only a First Aid folder. Players place a campfire in the outdoor world to create a campsite. Other adventurers join for vendors, repairs, tradeskill workspaces, and one-hour buffs. You slash-sit by the fire for a few moments first.",
+        "Each player can place one object. Each tradeskill has different objects at different skill levels. Named examples: a sharpening wheel (strength), a tailor faction banner (spirit), an herbalist incense candle (intellect). Those are exclusive with class buffs such as Blessing of Might or Arcane Intellect.",
         "Camping features share a 1-hour cooldown. A campfire is required for the published First Aid Kit. The Legacy perk Permanence extends camp rest benefits by 50%.",
         "Whether Camping has its own skill bar, like First Aid, is unpublished. The First Aid Camping group is the kit you unpack at a fire.",
       ],
@@ -105,10 +106,14 @@ export const PROFESSIONS_ARTICLE = {
       heading: "Other professions",
       paragraphs: [
         "Not yet documented with recipe windows: Blacksmithing, Cooking, Enchanting, Engineering, Fishing, Herbalism, Leatherworking, Mining, Skinning, and Tailoring.",
+        "The Deep Dive adds over 600 new recipes across all professions, with many existing recipes overhauled, and profession choice meant to matter at low level. Almost all crafted cooking food gives a stat boost.",
         "Cooking and Fishing are named on Legacy perks (Master Chef, Luremaster), so those trades exist. Recipe lists are unpublished.",
         "A Legacy perk names crate turn-ins to the Azeroth Commerce Authority and Durotar Supply and Logistics, and a Merchant Favor currency. Those names are on the perk. The rest of that economy is unpublished.",
       ],
     },
   ],
-  sources: [{ label: "First Aid Profession Preview — Warcraft Tavern (Luxrah)", href: SRC }],
+  sources: [
+    { label: "First Aid Profession Preview — Warcraft Tavern (Luxrah)", href: SRC },
+    { label: "Forever What’s Next panel recap", href: "https://news.blizzard.com/en-us/article/24303862/world-of-warcraft-forever-whats-next-panel-recap" },
+  ],
 };
