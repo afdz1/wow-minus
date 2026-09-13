@@ -18,6 +18,49 @@ export type Confirmation = {
 
 export const CONFIRMED: Confirmation[] = [
   {
+    id: "race-class-combos",
+    date: "2026-09-13",
+    topic: "Characters",
+    title: "New race and class combinations",
+    fact: "Forever adds six new race and class combinations: Human Hunter, Gnome Priest, Dwarf Shaman, Troll Warlock, Orc Mage, and Undead Paladin.",
+    notes: [
+      "Official copy already named Forsaken Paladin and Dwarf Shaman.",
+      "Alliance still: Gnome Priest and Dwarf Shaman.",
+      "Horde still: Undead Paladin, Orc Mage, and Troll Warlock.",
+    ],
+    shots: [
+      {
+        src: "/images/confirmed/race-class-alliance.png",
+        alt: "Gnome Priest and Dwarf Shaman standing in an Alliance zone, with a Tauren in gold plate on the left.",
+      },
+      {
+        src: "/images/confirmed/race-class-horde.png",
+        alt: "Undead Paladin, Orc Mage, and Troll Warlock standing together in a Horde zone.",
+      },
+    ],
+  },
+  {
+    id: "unholy-paladin-mount",
+    date: "2026-09-13",
+    topic: "Classes",
+    title: "Unholy Paladin mount",
+    fact: "Undead Paladins have an Unholy mount: a black armored horse with gold trim and skull barding.",
+    shots: [
+      {
+        src: "/images/confirmed/unholy-paladin-mount.png",
+        alt: "Unholy Paladin mount: a black horse in spiked gold-and-black armor with a skull faceplate and tattered white barding.",
+      },
+    ],
+  },
+  {
+    id: "world-buffs-raids",
+    date: "2026-09-13",
+    topic: "Systems",
+    title: "World buffs stay out of raids",
+    fact: "World buffs exist in Forever. They do not work in raids.",
+    shots: [],
+  },
+  {
     id: "full-name",
     date: "2026-09-13",
     topic: "Characters",
