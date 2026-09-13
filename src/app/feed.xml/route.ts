@@ -1,5 +1,6 @@
 import { NEWS } from "@/data/news";
 import { BLUE_POSTS } from "@/data/blue-posts";
+import { CONFIRMED } from "@/data/confirmed";
 import { SITE_DESCRIPTION, SITE_NAME, absUrl } from "@/lib/site";
 
 export const revalidate = 3600;
@@ -25,6 +26,12 @@ export function GET() {
       dek: n.dek,
       url: absUrl(`/blog/${n.slug}`),
       date: n.date,
+    })),
+    ...CONFIRMED.map((c) => ({
+      title: c.title,
+      dek: c.fact,
+      url: absUrl(`/confirmed#${c.id}`),
+      date: c.date,
     })),
   ].sort((a, b) => b.date.localeCompare(a.date));
 

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { NEWS } from "@/data/news";
 import { BLUE_POSTS } from "@/data/blue-posts";
+import { CONFIRMED } from "@/data/confirmed";
 import { CLASSES } from "@/data/content";
 import { absUrl } from "@/lib/site";
 
@@ -9,7 +10,9 @@ function onDay(iso: string) {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const newest = NEWS.reduce((best, article) => (article.date > best.date ? article : best));
+  const newestNews = NEWS.reduce((best, article) => (article.date > best.date ? article : best));
+  const newestConfirm = CONFIRMED[0];
+  const newest = newestConfirm && newestConfirm.date > newestNews.date ? newestConfirm : newestNews;
   const hubsUpdated = onDay(newest.date);
 
   const hubs: MetadataRoute.Sitemap = [
@@ -24,6 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: absUrl("/database/races"), changeFrequency: "weekly", priority: 0.8 },
     { url: absUrl("/roadmap"), changeFrequency: "weekly", priority: 0.7 },
     { url: absUrl("/news"), lastModified: hubsUpdated, changeFrequency: "daily", priority: 0.9 },
+    { url: absUrl("/confirmed"), lastModified: hubsUpdated, changeFrequency: "daily", priority: 0.85 },
   ];
 
   const posts: MetadataRoute.Sitemap = NEWS.map((article) => ({

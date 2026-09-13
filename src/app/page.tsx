@@ -7,7 +7,9 @@ import { NEWS } from "@/data/news";
 import { DUNGEONS, RAIDS, ZONES } from "@/data/content";
 import { OFFICIAL } from "@/data/art";
 import { BLUE_POSTS } from "@/data/blue-posts";
+import { CONFIRMED } from "@/data/confirmed";
 import { BlueBadge, BlogTile } from "@/components/BlueBadge";
+import { ShareButton } from "@/components/ShareButton";
 import { pageMeta } from "@/lib/seo";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 
@@ -112,6 +114,46 @@ export default function HomePage() {
               <BlogTile key={n.slug} article={n} />
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="band tight">
+        <div className="wrap-wide">
+          <div className="section-head">
+            <h2>Confirmed</h2>
+            <Link className="text-link" href="/confirmed">
+              View all →
+            </Link>
+          </div>
+          <p className="section-lede" style={{ textAlign: "left", margin: "0 0 22px" }}>
+            Short in-game facts. Screenshot when we have one.
+          </p>
+          {CONFIRMED[0] ? (
+            <div className="confirm-home">
+              <Link className="shot-link" href={`/confirmed#${CONFIRMED[0].id}`}>
+                <img
+                  src={CONFIRMED[0].image ?? OFFICIAL.features.systems}
+                  alt={CONFIRMED[0].imageAlt ?? CONFIRMED[0].title}
+                />
+              </Link>
+              <div className="copy">
+                <div className="confirm-head">
+                  <div className="meta">
+                    {CONFIRMED[0].topic} · {CONFIRMED[0].date}
+                  </div>
+                  <ShareButton
+                    title={`${CONFIRMED[0].title} — ClassicMinus`}
+                    text={CONFIRMED[0].fact}
+                    path={`/confirmed#${CONFIRMED[0].id}`}
+                  />
+                </div>
+                <h3>
+                  <Link href={`/confirmed#${CONFIRMED[0].id}`}>{CONFIRMED[0].title}</Link>
+                </h3>
+                <p style={{ margin: 0, color: "var(--muted)" }}>{CONFIRMED[0].fact}</p>
+              </div>
+            </div>
+          ) : null}
         </div>
       </section>
 

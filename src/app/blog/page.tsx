@@ -20,7 +20,8 @@ export default function BlogIndex() {
         <p>
           ClassicMinus recaps. Each post is labeled <BlueBadge compact label="Blue" /> for official Blizzard copy
           and <CommunityBadge compact /> for demo notes and creator videos. Full Blue Posts live under{" "}
-          <Link href="/news">Blue Posts</Link>.
+          <Link href="/news">Blue Posts</Link>. Short in-game screenshots go on{" "}
+          <Link href="/confirmed">Confirmed</Link>.
         </p>
       </Hero>
       <section className="band tight">
