@@ -6,17 +6,26 @@ const shot = "BlizzCon 2026 floor demo.";
 export const PROFESSIONS_ARTICLE = {
   slug: "professions",
   title: "Professions",
-  dek: "First Aid is the first Forever profession with a published recipe window: camping kits, bandages, curatives, and healing potions. Other trades will be added here as they surface.",
+  dek: "Camping is a world profession for campsites. First Aid is the first trade with a published recipe window: camping kits, bandages, curatives, and healing potions.",
   date: "2026-09-13",
   author: "ClassicMinus Staff",
   tag: "Classic-",
   image: img("horde-camping.jpg"),
-  note: "ClassicMinus profession ledger. First Aid is from the BlizzCon floor demo. Other trades stay empty until a recipe window is published. Sources at the bottom.",
+  note: "ClassicMinus profession ledger. Camping is the campsite system. First Aid recipes are from the BlizzCon floor demo. Other trades stay empty until a recipe window is published. Sources at the bottom.",
   body: [
-    "Forever professions are still being documented. The only published recipe window so far is First Aid, from the BlizzCon 2026 floor demo.",
-    "That window groups recipes into Camping, Bandages, Curatives, and Healing Potions. Three shots show the skill bar at First Aid 225/225. Nothing in those shots states whether 225 is the cap.",
+    "Camping is a profession built around campsites in the open world. First Aid is the only trade with a published recipe window so far, from the BlizzCon 2026 floor demo.",
+    "That First Aid window groups recipes into Camping, Bandages, Curatives, and Healing Potions. Three shots show the skill bar at First Aid 225/225. Nothing in those shots states whether 225 is the cap.",
   ],
   sections: [
+    {
+      id: "camping-profession",
+      heading: "Camping",
+      paragraphs: [
+        "Camping is a profession, not only a First Aid folder. Players place campsites in the outdoor world. Other adventurers can join, use their tradeskills, share buffs, and talk. Camps are the gathering point outside cities.",
+        "Camping features share a 1-hour cooldown. A campfire is required for the published First Aid Kit. The Legacy perk Permanence extends camp rest benefits by 50%.",
+        "Whether Camping has its own skill bar, like First Aid, is unpublished. The First Aid Camping group is the kit you unpack at a fire.",
+      ],
+    },
     {
       id: "first-aid",
       heading: "First Aid",
@@ -34,9 +43,9 @@ export const PROFESSIONS_ARTICLE = {
     },
     {
       id: "camping",
-      heading: "Camping",
+      heading: "First Aid camping recipes",
       paragraphs: [
-        "Camping is a First Aid recipe group. The listed craft is First Aid Kit.",
+        "Camping is also a First Aid recipe group. The listed craft is First Aid Kit.",
         "Craft: 3 Linen Bandage and 1 Refreshing Spring Water.",
         "Use: unpacks a first aid kit that lets you and others sitting nearby gain 34 increased Stamina, exclusive with Power Word: Fortitude. Requires a Campfire nearby. All camping features share a cooldown of 1 hour. Requires First Aid (20).",
       ],
@@ -95,7 +104,9 @@ export const PROFESSIONS_ARTICLE = {
       id: "other-professions",
       heading: "Other professions",
       paragraphs: [
-        "Not yet documented: Blacksmithing, Cooking, Enchanting, Engineering, Fishing, Herbalism, Leatherworking, Mining, Skinning, and Tailoring.",
+        "Not yet documented with recipe windows: Blacksmithing, Cooking, Enchanting, Engineering, Fishing, Herbalism, Leatherworking, Mining, Skinning, and Tailoring.",
+        "Cooking and Fishing are named on Legacy perks (Master Chef, Luremaster), so those trades exist. Recipe lists are unpublished.",
+        "A Legacy perk names crate turn-ins to the Azeroth Commerce Authority and Durotar Supply and Logistics, and a Merchant Favor currency. Those names are on the perk. The rest of that economy is unpublished.",
       ],
     },
   ],

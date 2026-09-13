@@ -26,8 +26,8 @@ export default function HomePage() {
     ["Soak in Breathtaking Expanses", OFFICIAL.features.expanses, "Lighting, fog, water, and moonlight upgrades on original Azeroth.", "/blog/wow-forever-features#soak-in-breathtaking-expanses"],
     ["Take Unknown Paths", OFFICIAL.features.paths, "Skyborne, Undead Paladin, Dwarf Shaman, and more race/class combos.", "/blog/wow-forever-features#take-unknown-paths"],
     ["Claim New Power", OFFICIAL.features.power, "Reworked talent trees for all nine classes. Plan a build.", "/blog/wow-forever-features#claim-new-power"],
-    ["Every Journey Matters", OFFICIAL.features.journey, "Legacy account-wide perks for alts without skipping 1–60.", "/blog/wow-forever-features#every-journey-matters"],
-    ["System Revamps", OFFICIAL.features.systems, "Camping, professions, Honor, optional transmog, HD/SD models.", "/blog/wow-forever-features#system-revamps"],
+    ["Every Journey Matters", OFFICIAL.features.journey, "Legacy account-wide perks for alts without skipping 1–60.", "/blog/legacy"],
+    ["System Revamps", OFFICIAL.features.systems, "Camping profession, Honor, optional transmog, HD/SD models.", "/blog/wow-forever-features#system-revamps"],
   ] as const;
 
   return (

@@ -1,6 +1,7 @@
 import { OFFICIAL } from "./art";
 import { FEATURES_ARTICLE } from "./features-article";
 import { PROFESSIONS_ARTICLE } from "./first-aid-article";
+import { LEGACY_ARTICLE } from "./legacy-article";
 import { VIDEOS as v, cite, videoPage } from "./video-sources";
 
 export const LAUNCH = new Date("2026-11-04T23:00:00.000Z");
@@ -48,6 +49,7 @@ export type NewsArticle = {
 };
 
 export const NEWS: NewsArticle[] = [
+  LEGACY_ARTICLE,
   PROFESSIONS_ARTICLE,
   FEATURES_ARTICLE,
   {
@@ -84,8 +86,8 @@ export const NEWS: NewsArticle[] = [
     image: OFFICIAL.zones.ashenvale1,
     body: [
       "The official Forever site leads with three zones. Zephras Isle is a floating starting experience for the Skyborne, levels 1–12, with architecture inspired by Skywall. Access to the race and this starting storyline requires the Skyborne Heroic Pack or a higher edition.",
-      "Riverglades is a sprawling Eastern Kingdoms landscape that shifts from lush hillsides to ruined keeps. Blizzard’s What’s Next panel placed more than 150 quests here in the mid-30s to mid-40s, with a Goblin trading post, travel routes, and an ogre fortress dungeon meant as an alternative to repeating Scarlet Monastery.",
-      "Mount Hyjal is being expanded into an endgame zone after Archimonde’s defeat. Threats old and new stalk the slopes. Hyjal Summit (20-player) sits here, and one of three Barrow Deeps raid entrances is also tied to the mountain.",
+      "Riverglades is a sprawling Eastern Kingdoms landscape that shifts from lush hillsides to ruined keeps. Blizzard’s What’s Next panel placed more than 150 quests here in the mid-30s to mid-40s, with humans, orcs, and ogres on the frontier, a neutral goblin port with extra travel routes, and an ogre fortress dungeon meant as an alternative to repeating Scarlet Monastery. The story is living there, not saving Azeroth.",
+      "Mount Hyjal is being expanded into an endgame leveling zone after Archimonde’s defeat, with solo and group content, reputations, quests, and rewards. Threats old and new stalk the slopes. Hyjal Summit (20-player) sits here, and one of three Barrow Deeps raid entrances is also tied to the mountain.",
       "Shen’dralas fills the gap between Mulgore and Desolace, tying the Shen’dralar, Dire Maul, and centaur tribes into a return visit for Maraudon and the Razorfen hills.",
       `WillE’s panel recap places Riverglades against the Burning Steppes, Swamp of Sorrows, and Redridge, and calls it “a pretty enormous zone.” He states Hyjal is framed so that players go through Darkwhisper Gorge, and asks whether the elites on that road will be retuned. ${cite(v.wille, 131, "WillE, 2:11")} ${cite(v.wille, 114, "WillE, 1:54")}`,
       `Slesh’s solo demo on Zephras names the starting city Valinar. He reached a Darnassus-style boat toward the mainland and hit an invisible wall. A dark forest on the island is called out for the updated lighting pass. ${cite(v.slesh, 199, "Slesh, 3:19")}`,
@@ -108,7 +110,7 @@ export const NEWS: NewsArticle[] = [
     tag: "PVE",
     image: OFFICIAL.features.stories,
     body: [
-      "Launch includes nine new dungeons: Hall of Thanes beneath Ironforge (13–18), Ruins of Lordaeron (~15–20), City of Dalaran (~20–35), the Wetlands excavation above Whelgar’s (24–29), Drowned City off Stranglethorn (35–40), Krol’dok Stronghold (35–40), Alcaz Prison (48–53), Blackmaw Hold (55–60), and Shaper’s Terrace in Un’Goro (58–60).",
+      "Launch includes nine new dungeons: Hall of Thanes beneath Ironforge (Alliance 13–18, Horde can enter), Ruins of Lordaeron (Horde ~15–20 reclaiming the city, Alliance can find a way in), City of Dalaran (~20–35, barrier down), the Wetlands excavation above Whelgar’s (24–29), Drowned City off Stranglethorn (35–40), Krol’dok Stronghold (35–40, Scarlet Monastery alternative), Alcaz Prison (48–53), Blackmaw Hold (55–60 furbolg city), and Shaper’s Terrace in Un’Goro (58–60).",
       "Raids do not open on day one. On December 9, 2026 Blizzard unlocks Barrow Deeps (10-player), Hyjal Summit (20-player), and Onyxia’s Lair as a 40-player encounter. Barrow Deeps has three world entrances and is described as a Night Elf prison for especially dangerous captives.",
       "A 15 vs 15 battleground, Darkspear Islands, mixes Arathi Basin-style flag captures with Eye of the Storm-like layout off the coast of Kalimdor.",
       `WillE states Hall of Thanes is the Ironforge door players have glitched or that Cataclysm later opened, and that both factions can complete it, with Horde using an alternative entrance. He describes City of Dalaran as a mid-level dungeon and also “a bit more of an open-world zone.” ${cite(v.wille, 161, "WillE, 2:41")} ${cite(v.wille, 172, "WillE, 2:52")}`,
@@ -132,11 +134,11 @@ export const NEWS: NewsArticle[] = [
     tag: "Classes",
     image: OFFICIAL.skyborne,
     body: [
-      "Skyborne are elemental elves who do not form a third faction. At character creation you choose Windshaper (Horde, shaman access) or High Order (Alliance, mage access). Both factions can play Warrior, Hunter, Rogue, and Druid, including unique Skyborne druid forms.",
-      "Confirmed new combos for existing races include Undead Paladin and Dwarf Shaman. Racials are being rewritten: Forsaken Paladin is real, Will of the Forsaken is no longer a full immunity, Dwarves pick up Big Game Hunter, Humans gain Will to Survive, and Skyborne share Walk on Air plus elemental passives.",
-      "Class talent trees are overhauled rather than numerically tweaked. ClassicMinus hosts a full Forever talent calculator transcribed from in-game tooltips, with Compare to Classic markers for every changed, moved, or new talent.",
+      "Skyborne are elemental elves who do not form a third faction. At character creation you choose Windshaper (Horde, shaman access) or High Order (Alliance, mage access). Alliance Skyborne follow Kirin Tor teaching. Horde Skyborne take elemental traditions. Both factions can play Warrior, Hunter, Rogue, and Druid, including unique sky-blue druid forms for bear, cat, travel, and boomkin. Tree form was not shown.",
+      "Confirmed new combos for existing races include Undead Paladin and Dwarf Shaman. Racials are being rewritten: Forsaken Paladin is real, Will of the Forsaken is no longer a full immunity, Dwarves pick up Big Game Hunter, Humans gain Will to Survive. Skyborne share Walk on Air, Wind Blessed, and Elemental Insight. High Order uses Read Ley Line. Windshaper uses Skysight (10% run speed). Customization includes skin tones, hair, eyes, and markings.",
+      "Class talent trees are overhauled rather than numerically tweaked. Paladins get a tanking seal, more group healing, and a Retribution suite, including Holy Strike. Talent design moved off +1–2% nodes. ClassicMinus hosts a full Forever talent calculator transcribed from in-game tooltips, with Compare to Classic markers for every changed, moved, or new talent.",
       `Slesh played an Alliance Skyborne rogue on the solo demo. Walk on Air is a slow-fall. A ley-line interaction is remembered as 100% health and mana regen; he flags that he may have the numbers wrong. ${cite(v.slesh, 75, "Slesh, 1:15")} ${cite(v.slesh, 150, "Slesh, 2:30")} ${cite(v.slesh, 171, "Slesh, 2:51")}`,
-      `Ace’s Skyborne stills show unique druid forms for boomkin, travel, cat, and bear. ${cite(v.ace, 302, "Ace, 5:02")}`,
+      `Ace’s Skyborne stills show unique druid forms for boomkin, travel, cat, and bear. Tree form was not in those stills. ${cite(v.ace, 302, "Ace, 5:02")}`,
       `Marcelian’s demo station names additional combos beyond the headline pair: Orc Mage and Human Hunter, plus Undead Paladin. MetaGoblin says BlizzCon footage confirmed the class combinations shown in the Hyjal trailer, including Orc Mage and Troll Warlock. ${cite(v.marcelian, 134, "Marcelian & Flame, 2:14")} ${cite(v.meta, 156, "MetaGoblin, 2:36")}`,
       `Marcelian opened Retribution Paladin and read Holy Strike — an ability from original WoW alpha — with seals still on the spec. ${cite(v.marcelian, 93, "Marcelian & Flame, 1:33")}`,
       `Xaryu read the Mage trees on the dungeon demo: Arcane Blast is present; Missile Barrage is a 40% chance tied to Arcane Blast; Hot Streak stacks to three and cuts Pyroblast cast time by 25% per stack; Frostfire Bolt is listed with Fire crits; there is no mage healer spec. An Arcane talent is read as 30% less threat. Dual specialization is on the client. ${cite(v.xaryu, 40, "Xaryu, 0:40")} ${cite(v.xaryu, 200, "Xaryu, 3:20")} ${cite(v.xaryu, 840, "Xaryu, 14:00")} ${cite(v.xaryu, 1295, "Xaryu, 21:35")}`,
@@ -160,11 +162,12 @@ export const NEWS: NewsArticle[] = [
     tag: "Systems",
     image: OFFICIAL.features.systems,
     body: [
-      "Camping lets players craft campfires in the outdoor world. Other adventurers can stop, contribute through professions, and share campsite buffs. Blizzard is positioning it as a new gathering point outside cities.",
-      "The Legacy system grants account-wide perks for leveling additional characters without letting alts skip the journey to 60. Transmog is opt-in: you choose whether you see your own transmog and whether you see other players’ transmog.",
-      "Visual presets include modern and Classic looks, HD and SD character models, restored Classic animations on HD models, gamepad support, and rendering upgrades — flowing rivers in Elwynn, mist on Darkshore, moonlight in Ashenvale — while keeping original silhouettes.",
+      "Camping is a profession. Players place campsites in the outdoor world. Other adventurers stop, contribute through tradeskills, share buffs, and talk. First Aid also crafts a First Aid Kit used at a campfire; camping features share a 1-hour cooldown.",
+      "The Legacy system grants account-wide perks for leveling additional characters without letting alts skip the journey to 60. Challenges award one point each. Those points buy Professions, Adventure, and Resourcefulness bonuses, and the same total fills a cosmetic track. Character creation uses a required Main Name and Secondary Name; you can hide the secondary name.",
+      "Transmog is opt-in: you choose whether you see your own transmog and whether you see other players’ transmog. You can leave it off and see original gear on everyone.",
+      "Visual presets include modern and Classic looks. HD and SD options cover characters, models, and the world. HD models keep restored Classic animations. Gamepad support and riding-skill updates are on the systems list. Rendering upgrades — flowing rivers in Elwynn, mist on Darkshore, moonlight in Ashenvale — keep original silhouettes.",
       `WillE describes Camping as usable “almost anywhere in the open world,” with other players stopping to craft for the camp and talk. ${cite(v.wille, 376, "WillE, 6:16")}`,
-      `Legacy is broken into six categories — classes, trade skills, PvP, adventure, dungeons, and raids. Points carry to alts. Slesh’s demo pane redeems those points for cosmetics and mounts. Xaryu compares the UI to achievements. ${cite(v.wille, 409, "WillE, 6:49")} ${cite(v.ace, 408, "Ace, 6:48")} ${cite(v.slesh, 114, "Slesh, 1:54")} ${cite(v.xaryu, 745, "Xaryu, 12:25")}`,
+      `Legacy is broken into six challenge tabs — classes, trade skills, PvP, adventure, dungeons, and raids — covering exploring, reputations, and the rest of that list. Points carry to alts. The perk tree spends those points; cosmetics unlock from total points earned. Slesh’s demo pane redeems points for cosmetics and mounts. Xaryu compares the UI to achievements. ${cite(v.wille, 409, "WillE, 6:49")} ${cite(v.ace, 408, "Ace, 6:48")} ${cite(v.slesh, 114, "Slesh, 1:54")} ${cite(v.xaryu, 745, "Xaryu, 12:25")}`,
       `Xaryu’s PvP tab on the demo: unranked, with a rank cap that increases each week up to 24,750 for Rank 14. WillE infers from the 2027 “PvP season refresh” line that Rank 14 may not last; that is not what the demo tab shows. ${cite(v.xaryu, 297, "Xaryu, 4:57")} ${cite(v.wille, 513, "WillE, 8:33")}`,
       `Other demo QoL: dual spec, 40 quest-log slots, an in-game quest helper, arachnophobia mode, edit mode, nameplates, and focus targets. Missing in that client: a dungeon map, target markers, and a way to turn off the retail-style cast bar. ${cite(v.xaryu, 1295, "Xaryu, 21:35")} ${cite(v.xaryu, 727, "Xaryu, 12:07")} ${cite(v.slesh, 107, "Slesh, 1:47")} ${cite(v.xaryu, 888, "Xaryu, 14:48")}`,
       `Ace shows a trinket that stuns for 3 seconds, or 5 seconds extra with 80% of the cooldown refunded if the target is Naga. He also lists riding-skill updates and gamepad support on the systems slide. ${cite(v.ace, 362, "Ace, 6:02")} ${cite(v.ace, 249, "Ace, 4:09")}`,
@@ -190,7 +193,7 @@ export const NEWS: NewsArticle[] = [
     body: [
       "Beta runs September 17 through October 21 (Pacific), with a level 30 cap. Upgrade packs can reserve names October 27–November 3. Launch is November 4. Raids unlock December 9.",
       "Hardcore is planned after launch, sometime in winter 2026/2027. Spring 2027 brings two new raids (10 and 20), two dungeons, a new playable area, a legendary questline, and a PvP season refresh. Summer 2027 revamps an iconic raid, adds another raid, two more dungeons, world content, and profession/Legacy updates.",
-      "Skyborne Heroic Pack does not include guaranteed beta. Skyborne Epic Pack and the Warcraft Forever Collection do. The Collection is a limited-time BlizzCon offer through January 11, 2027.",
+      "Skyborne Heroic Pack is listed at $29.99. It unlocks the race and Zephras Isle. It does not include guaranteed beta. Skyborne Epic Pack and the Warcraft Forever Collection do. Named Epic extras include Veteran Adventurer’s Loyal Companion, Veteran Adventurer’s Outdoor Wear, Zergling, Panda, Diablo, and Pachimari pets, plus Lordaeron and Shen’dorei tabards. The Collection is a limited-time BlizzCon offer through January 11, 2027. The physical Collector’s Edition adds a 13-inch dwarf-and-bear statue, a Zephras Isle mousepad, art prints, pins, and a journal, with a Collection digital code.",
       `Holly’s ceremony clip: “World of Warcraft Forever launches in seven weeks… on November 4.” “Beta starts this Thursday. And if you’re here, you can play Forever on the show floor.” ${cite(v.soda, 289, "Sodapoppin, 4:49")}`,
       `Ace’s pack recap: guaranteed beta is on Skyborne Epic Pack and Warcraft Forever Collection, not the Heroic Pack. He reads beta as September 17 through October 22, level 30, with name reservation on October 27. ${cite(v.ace, 10, "Ace, 0:10")}`,
       `WillE notes Skyborne and guaranteed beta sit behind a purchase, and that a later race or class could be sold the same way. That is his monetization read, not an announced second pack. ${cite(v.wille, 545, "WillE, 9:05")}`,

@@ -55,7 +55,7 @@ export const BLUE_POSTS: BluePost[] = [
     body: [
       "Blizzard’s shop post states Forever access is included with an active World of Warcraft Subscription or Game Time at launch on November 4, 2026 at 3:00 p.m. PST. Upgrade editions are optional.",
       "Skyborne Heroic Pack: Skyborne race and Zephras Isle, early name reservation, cosmetics, and one Invite-A-Friend launch code. It does not include guaranteed beta.",
-      "Skyborne Epic Pack adds beta from September 17 through October 21, 30 days of Game Time starting November 4, extra cosmetics, and two more invite codes.",
+      "Skyborne Epic Pack adds beta from September 17 through October 21, 30 days of Game Time starting November 4, Veteran Adventurer’s Loyal Companion, Veteran Adventurer’s Outdoor Wear, Zergling, Panda, Diablo, and Pachimari pets, Lordaeron and Shen’dorei tabards, and two more invite codes.",
       "Warcraft Forever Collection is a limited-time bundle through January 11, 2027. It includes the Epic Pack plus Warcraft III: Reforged and the Forsaken Kingdom campaign.",
       "Name reservation runs October 27–November 3 for upgrade buyers, up to three characters. Invite codes email starting October 20 and cover launch week, November 4–11.",
     ],

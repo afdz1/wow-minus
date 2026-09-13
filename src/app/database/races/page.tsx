@@ -22,7 +22,8 @@ export default function RacesPage() {
       <Hero image={OFFICIAL.skyborne} kicker="Database" title="Races & racials">
         <p>
           Stand with a new race of windswept elves. Follow the path of the Windshaper Horde or the High Order
-          Alliance. Existing racials were rewritten for Forever.
+          Alliance. High Order uses Read Ley Line. Windshaper uses Skysight. Existing racials were rewritten for
+          Forever.
         </p>
       </Hero>
       <div className="wrap">

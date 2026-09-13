@@ -29,7 +29,7 @@ export const ZONES: Zone[] = [
     image: OFFICIAL.features.expanses,
     video: OFFICIAL.videos.riverglades,
     blurb:
-      "A sprawling landscape in the Eastern Kingdom which shifts from lush hillsides to ruined keeps of old. Frontier rivers, trade routes, a goblin post, and 150+ quests.",
+      "A sprawling landscape in the Eastern Kingdom which shifts from lush hillsides to ruined keeps of old. Frontier rivers, trade routes, a neutral goblin port, 150+ quests from the mid-30s to mid-40s.",
   },
   {
     slug: "mount-hyjal",
@@ -39,7 +39,7 @@ export const ZONES: Zone[] = [
     image: OFFICIAL.zones.ashenvale1,
     video: OFFICIAL.videos.hyjal,
     blurb:
-      "Threats both old and new stalk the slopes of the mountain, eager to claim its power and destroy anyone daring enough to get in their way. Home of Hyjal Summit.",
+      "Threats both old and new stalk the slopes of the mountain, eager to claim its power and destroy anyone daring enough to get in their way. Endgame leveling with reputations. Home of Hyjal Summit and a Barrow Deeps entrance.",
   },
   {
     slug: "shendralas",
@@ -107,9 +107,9 @@ export const ZONES: Zone[] = [
 ];
 
 export const DUNGEONS = [
-  { slug: "hall-of-thanes", name: "Hall of Thanes", levels: "13–18", location: "Ironforge", image: OFFICIAL.features.stories, blurb: "Underground resting place for ancient Dwarven rulers beneath Ironforge." },
-  { slug: "ruins-of-lordaeron", name: "Ruins of Lordaeron", levels: "15–20", location: "Tirisfal Glades", image: OFFICIAL.features.paths, blurb: "Horde and Alliance battle over the ruins as the Forsaken push to reclaim them." },
-  { slug: "city-of-dalaran", name: "City of Dalaran", levels: "20–35", location: "Alterac / Dalaran", image: OFFICIAL.features.power, blurb: "The old barrier has fallen. Strange magical trouble inside the restored city." },
+  { slug: "hall-of-thanes", name: "Hall of Thanes", levels: "13–18", location: "Ironforge", image: OFFICIAL.features.stories, blurb: "Alliance 13–18 call to protect dwarven treasures beneath Ironforge. Horde can enter for the loot." },
+  { slug: "ruins-of-lordaeron", name: "Ruins of Lordaeron", levels: "15–20", location: "Tirisfal Glades", image: OFFICIAL.features.paths, blurb: "Horde 15–20 reclaim the ruins. Alliance can find a way in." },
+  { slug: "city-of-dalaran", name: "City of Dalaran", levels: "20–35", location: "Alterac / Dalaran", image: OFFICIAL.features.power, blurb: "The old barrier has fallen. Kirin Tor trouble inside the restored city." },
   { slug: "whelgars-excavation", name: "Whelgar's Excavation", levels: "24–29", location: "Wetlands", image: OFFICIAL.zones.dustwallow, blurb: "Explorers’ League dig site above Whelgar’s Excavation." },
   { slug: "drowned-city", name: "Drowned City", levels: "35–40", location: "Stranglethorn Vale", image: OFFICIAL.zones.darkshore, blurb: "Sunken troll ruins off the coast. Naga and pirates." },
   { slug: "kroldok-stronghold", name: "Krol'dok Stronghold", levels: "35–40", location: "Riverglades", image: OFFICIAL.features.expanses, blurb: "Massive ogre fortress. Outdoor dungeon meant as a Scarlet Monastery alternative." },
@@ -138,7 +138,7 @@ export const CLASSES = [
 
 export const ROADMAP = [
   { date: "Sep 17–Oct 21, 2026", title: "Beta", detail: "Level 30 cap. Guaranteed access with Epic Pack, Collection, or Collector’s Edition." },
-  { date: "Oct 27–Nov 3, 2026", title: "Name reservation", detail: "Upgrade packs can create characters early and reserve up to three names." },
+  { date: "Oct 27–Nov 3, 2026", title: "Name reservation", detail: "Upgrade packs can create characters early and reserve up to three names. Each character uses a Main Name and a Secondary Name." },
   { date: "Nov 4, 2026 · 3:00 p.m. PST", title: "Launch", detail: "World of Warcraft: Forever goes live. Included with a WoW subscription." },
   { date: "Dec 9, 2026", title: "Raids unlock", detail: "Barrow Deeps (10), Hyjal Summit (20), Onyxia’s Lair (40)." },
   { date: "Winter 2026/2027", title: "Hardcore", detail: "Forever Hardcore plus additional raids and content." },
