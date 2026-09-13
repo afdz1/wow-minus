@@ -1,1 +1,459 @@
-{"racials":{"Horde":[{"race":"Orc","classes":["Warrior","Hunter","Mage","Rogue","Warlock","Shaman"],"abilities":[["Blood Fury","+10% Attack Power & Spell Power for 15 sec."],["Shatter Curse","Immune to Curses and Banes; reduced Magical damage taken for 8 sec."],["Axe Specialization","While wielding an axe, +1% spell and ability critical strike chance."],["Hardiness","Stun duration reduced by 20%."]]},{"race":"Undead","classes":["Warrior","Mage","Rogue","Priest","Warlock","Paladin"],"abilities":[["Will of the Forsaken","Removes Charm, Fear and Sleep effects. (No longer an immunity.)"],["Cannibalize","Regenerate 35% Health and Mana from corpses."],["Underwater Breathing","Breathe underwater 300% longer."],["Touch of the Grave","Attacks sometimes drain health."]]},{"race":"Tauren","classes":["Warrior","Hunter","Druid","Shaman"],"abilities":[["War Stomp","Stuns nearby enemies for 2 sec."],["Cultivation","Grow bonus herbs without Herbalism."],["Plainsrunning","Gain increased movement speed the longer you keep moving."],["Endurance","+5% total Health, +1% Hit Chance."]]},{"race":"Troll","classes":["Warrior","Hunter","Mage","Rogue","Priest","Warlock","Shaman"],"abilities":[["Berserking","+10% attack and cast speed for 10 sec."],["Rapid Regeneration","Regenerate 50% max Health over time."],["Beast Slaying","+5% damage vs Beasts."],["Regeneration","10% of Health regen continues in combat."]]},{"race":"Skyborne (Windshaper)","classes":["Warrior","Hunter","Rogue","Druid","Shaman"],"abilities":[["Walk on Air","Glide downward through the air for 10 seconds."],["Skysight","Receive an Elemental Blessing increasing run speed by 10%."],["Wind Blessed","Passive. 1% increased melee, ranged, and spellcasting Haste."],["Elemental Insight","Passive. Damage to Elementals increased by 5%."]]}],"Alliance":[{"race":"Human","classes":["Warrior","Hunter","Mage","Rogue","Priest","Warlock","Paladin"],"abilities":[["Will to Survive","Removes Stun effects."],["Perception","Detect stealth for 20 sec."],["Sword Specialization","While wielding a sword, +2% spell and ability critical strike chance."],["The Human Spirit","+5% Spirit."]]},{"race":"Dwarf","classes":["Warrior","Hunter","Rogue","Priest","Paladin","Shaman"],"abilities":[["Stoneform","Immune to Bleeds, Poison and Disease; reduced Physical damage taken for 8 sec."],["Find Treasure","Track treasure chests."],["Mace Specialization","While wielding a mace, +1% spell and ability critical strike chance."],["Big Game Hunter","+5% damage vs Beasts."]]},{"race":"Night Elf","classes":["Warrior","Hunter","Rogue","Priest","Druid"],"abilities":[["Elune's Light","+10% critical strike chance for 15 sec."],["Shadowmeld","Stealth while immobile."],["Quickness","+1% Dodge, +2% run speed."],["Wisp Spirit","+75% speed while dead."]]},{"race":"Gnome","classes":["Warrior","Mage","Rogue","Priest","Warlock"],"abilities":[["Escape Artist","Briefly immune to Roots and Snares."],["Eureka!","Reduced cost and +10% damage/healing on your next 3 abilities."],["Expansive Mind","+5% Mana, Rage and Energy."],["Engineering Specialization","More reliable engineering devices."]]},{"race":"Skyborne (High Order)","classes":["Warrior","Hunter","Mage","Rogue","Druid"],"abilities":[["Walk on Air","Glide downward through the air for 10 seconds."],["Read Ley Line","Activate a ley line to gain 100% increased Health and Mana regeneration."],["Wind Blessed","Passive. 1% increased melee, ranged, and spellcasting Haste."],["Elemental Insight","Passive. Damage to Elementals increased by 5%."]]}]},"classRacials":{"Priest":{"note":"From the BlizzCon demo. Fear Ward is now baseline for every Priest. Troll and Night Elf spells have not been seen yet; tooltips are filled in as they surface.","races":{"Undead":[["Dark Sacrifice","Instant, 10 min cooldown. Cannibalize 720 of your own Health over 15 sec to gain 720 Mana. (Rank 2, level 38 values.)"]],"Dwarf":[["Chastise","Holy damage plus a short root, as in TBC."],["Desperate Prayer","Instantly heals you, as in TBC."]],"Gnome":[["Confounding Flash","Area crowd-control cooldown."],["Contingency Plan","Reported to work like Guardian Spirit: prevents a death and heals instead."]],"Human":[["Divine Grace","Cooldown that removes Weakened Soul from the target and heals them."]],"Troll":[["Unknown","Not yet seen in the demo."]],"Night Elf":[["Unknown","Not yet seen in the demo."]]},"sources":"Warcraft Tavern, 12 Sep 2026; Dark Sacrifice tooltip from demo footage."}},"classAbilities":{"Paladin":[["Holy Strike","Melee strike; mentioned by Improved Holy Strike, Iron Creed and Sacred Arbiter."],["Seal of Fury","Tanking seal with an absorb shield; mentioned by Improved Seal of Fury and Twist of Light."]],"Priest":[["Shadow Word: Death","Execute-style Shadow spell; mentioned by Early Demise."],["Devouring Plague","Appears to be a normal Shadow spell now rather than an Undead racial; mentioned by Devouring Contagion."]],"Mage":[["Frostfire Bolt","Fire and Frost bolt; mentioned by Improved Fireball, Hot Streak, Missile Barrage and Incineration."]],"Warlock":[["Bane of Agony","Curse of Agony renamed; mentioned by Improved Bane of Agony, Amplify Curse and Pandemic."],["Bane of Doom","Curse of Doom renamed; mentioned by Pandemic."],["Incubus","Male counterpart to the Succubus; mentioned by Fel Vitality, Fel Domination, Demonic Sacrifice and Improved Sayaad."]],"Shaman":[["Fire Nova","Now a spell with a cooldown rather than a totem; mentioned by Improved Fire Nova and Call of Flame."]]}}
+{
+  "racials": {
+    "Horde": [
+      {
+        "race": "Orc",
+        "icon": "race_orc_male",
+        "classes": [
+          "Warrior",
+          "Hunter",
+          "Mage",
+          "Rogue",
+          "Warlock",
+          "Shaman"
+        ],
+        "abilities": [
+          [
+            "Blood Fury",
+            "+10% Attack Power & Spell Power for 15 sec.",
+            "racial_orc_berserkerstrength"
+          ],
+          [
+            "Shatter Curse",
+            "Immune to Curses and Banes; reduced Magical damage taken for 8 sec.",
+            "spell_shadow_curseofachimonde"
+          ],
+          [
+            "Axe Specialization",
+            "While wielding an axe, +1% spell and ability critical strike chance.",
+            "inv_axe_06"
+          ],
+          [
+            "Hardiness",
+            "Stun duration reduced by 20%.",
+            "inv_helmet_23"
+          ]
+        ]
+      },
+      {
+        "race": "Undead",
+        "icon": "race_scourge_male",
+        "classes": [
+          "Warrior",
+          "Mage",
+          "Rogue",
+          "Priest",
+          "Warlock",
+          "Paladin"
+        ],
+        "abilities": [
+          [
+            "Will of the Forsaken",
+            "Removes Charm, Fear and Sleep effects. (No longer an immunity.)",
+            "spell_shadow_raisedead"
+          ],
+          [
+            "Cannibalize",
+            "Regenerate 35% Health and Mana from corpses.",
+            "ability_racial_cannibalize"
+          ],
+          [
+            "Underwater Breathing",
+            "Breathe underwater 300% longer.",
+            "spell_shadow_demonbreath"
+          ],
+          [
+            "Touch of the Grave",
+            "Attacks sometimes drain health.",
+            "spell_shadow_deathpact"
+          ]
+        ]
+      },
+      {
+        "race": "Tauren",
+        "icon": "race_tauren_male",
+        "classes": [
+          "Warrior",
+          "Hunter",
+          "Druid",
+          "Shaman"
+        ],
+        "abilities": [
+          [
+            "War Stomp",
+            "Stuns nearby enemies for 2 sec.",
+            "ability_warstomp"
+          ],
+          [
+            "Cultivation",
+            "Grow bonus herbs without Herbalism.",
+            "inv_misc_flower_02"
+          ],
+          [
+            "Plainsrunning",
+            "Gain increased movement speed the longer you keep moving.",
+            "inv_misc_foot_centaur"
+          ],
+          [
+            "Endurance",
+            "+5% total Health, +1% Hit Chance.",
+            "spell_nature_unyeildingstamina"
+          ]
+        ]
+      },
+      {
+        "race": "Troll",
+        "icon": "race_troll_male",
+        "classes": [
+          "Warrior",
+          "Hunter",
+          "Mage",
+          "Rogue",
+          "Priest",
+          "Warlock",
+          "Shaman"
+        ],
+        "abilities": [
+          [
+            "Berserking",
+            "+10% attack and cast speed for 10 sec.",
+            "racial_troll_berserk"
+          ],
+          [
+            "Rapid Regeneration",
+            "Regenerate 50% max Health over time.",
+            "spell_nature_regenerate"
+          ],
+          [
+            "Beast Slaying",
+            "+5% damage vs Beasts.",
+            "inv_misc_pelt_bear_03"
+          ],
+          [
+            "Regeneration",
+            "10% of Health regen continues in combat.",
+            "spell_nature_regeneration"
+          ]
+        ]
+      },
+      {
+        "race": "Skyborne (Windshaper)",
+        "icon": "inv_misc_head_elf_02",
+        "classes": [
+          "Warrior",
+          "Hunter",
+          "Rogue",
+          "Druid",
+          "Shaman"
+        ],
+        "abilities": [
+          [
+            "Walk on Air",
+            "Glide downward through the air for 10 seconds.",
+            "ability_druid_flightform"
+          ],
+          [
+            "Skysight",
+            "Receive an Elemental Blessing increasing run speed by 10%.",
+            "ability_hunter_pathfinding"
+          ],
+          [
+            "Wind Blessed",
+            "Passive. 1% increased melee, ranged, and spellcasting Haste.",
+            "spell_nature_windfury"
+          ],
+          [
+            "Elemental Insight",
+            "Passive. Damage to Elementals increased by 5%.",
+            "spell_nature_elementalabsorption"
+          ]
+        ]
+      }
+    ],
+    "Alliance": [
+      {
+        "race": "Human",
+        "icon": "race_human_male",
+        "classes": [
+          "Warrior",
+          "Hunter",
+          "Mage",
+          "Rogue",
+          "Priest",
+          "Warlock",
+          "Paladin"
+        ],
+        "abilities": [
+          [
+            "Will to Survive",
+            "Removes Stun effects.",
+            "spell_holy_blessingofprotection"
+          ],
+          [
+            "Perception",
+            "Detect stealth for 20 sec.",
+            "spell_nature_sleep"
+          ],
+          [
+            "Sword Specialization",
+            "While wielding a sword, +2% spell and ability critical strike chance.",
+            "inv_sword_27"
+          ],
+          [
+            "The Human Spirit",
+            "+5% Spirit.",
+            "inv_enchant_shardbrilliantsmall"
+          ]
+        ]
+      },
+      {
+        "race": "Dwarf",
+        "icon": "race_dwarf_male",
+        "classes": [
+          "Warrior",
+          "Hunter",
+          "Rogue",
+          "Priest",
+          "Paladin",
+          "Shaman"
+        ],
+        "abilities": [
+          [
+            "Stoneform",
+            "Immune to Bleeds, Poison and Disease; reduced Physical damage taken for 8 sec.",
+            "spell_shadow_unholystrength"
+          ],
+          [
+            "Find Treasure",
+            "Track treasure chests.",
+            "racial_dwarf_findtreasure"
+          ],
+          [
+            "Mace Specialization",
+            "While wielding a mace, +1% spell and ability critical strike chance.",
+            "inv_mace_01"
+          ],
+          [
+            "Big Game Hunter",
+            "+5% damage vs Beasts.",
+            "inv_misc_pelt_wolf_01"
+          ]
+        ]
+      },
+      {
+        "race": "Night Elf",
+        "icon": "race_nightelf_male",
+        "classes": [
+          "Warrior",
+          "Hunter",
+          "Rogue",
+          "Priest",
+          "Druid"
+        ],
+        "abilities": [
+          [
+            "Elune's Light",
+            "+10% critical strike chance for 15 sec.",
+            "spell_holy_elunesgrace"
+          ],
+          [
+            "Shadowmeld",
+            "Stealth while immobile.",
+            "ability_ambush"
+          ],
+          [
+            "Quickness",
+            "+1% Dodge, +2% run speed.",
+            "spell_magic_lesserinvisibilty"
+          ],
+          [
+            "Wisp Spirit",
+            "+75% speed while dead.",
+            "spell_nature_wispsplode"
+          ]
+        ]
+      },
+      {
+        "race": "Gnome",
+        "icon": "race_gnome_male",
+        "classes": [
+          "Warrior",
+          "Mage",
+          "Rogue",
+          "Priest",
+          "Warlock"
+        ],
+        "abilities": [
+          [
+            "Escape Artist",
+            "Briefly immune to Roots and Snares.",
+            "ability_rogue_trip"
+          ],
+          [
+            "Eureka!",
+            "Reduced cost and +10% damage/healing on your next 3 abilities.",
+            "inv_gizmo_02"
+          ],
+          [
+            "Expansive Mind",
+            "+5% Mana, Rage and Energy.",
+            "inv_enchant_essenceeternallarge"
+          ],
+          [
+            "Engineering Specialization",
+            "More reliable engineering devices.",
+            "inv_misc_gear_01"
+          ]
+        ]
+      },
+      {
+        "race": "Skyborne (High Order)",
+        "icon": "inv_misc_head_elf_01",
+        "classes": [
+          "Warrior",
+          "Hunter",
+          "Mage",
+          "Rogue",
+          "Druid"
+        ],
+        "abilities": [
+          [
+            "Walk on Air",
+            "Glide downward through the air for 10 seconds.",
+            "ability_druid_flightform"
+          ],
+          [
+            "Read Ley Line",
+            "Activate a ley line to gain 100% increased Health and Mana regeneration.",
+            "spell_arcane_arcane04"
+          ],
+          [
+            "Wind Blessed",
+            "Passive. 1% increased melee, ranged, and spellcasting Haste.",
+            "spell_nature_windfury"
+          ],
+          [
+            "Elemental Insight",
+            "Passive. Damage to Elementals increased by 5%.",
+            "spell_nature_elementalabsorption"
+          ]
+        ]
+      }
+    ]
+  },
+  "classRacials": {
+    "Priest": {
+      "note": "From the BlizzCon demo. Fear Ward is now baseline for every Priest. Troll and Night Elf spells have not been seen yet; tooltips are filled in as they surface.",
+      "races": {
+        "Undead": [
+          [
+            "Dark Sacrifice",
+            "Instant, 10 min cooldown. Cannibalize 720 of your own Health over 15 sec to gain 720 Mana. (Rank 2, level 38 values.)",
+            "spell_shadow_soulleech_3"
+          ]
+        ],
+        "Dwarf": [
+          [
+            "Chastise",
+            "Holy damage plus a short root, as in TBC.",
+            "spell_holy_chastise"
+          ],
+          [
+            "Desperate Prayer",
+            "Instantly heals you, as in TBC.",
+            "spell_holy_restoration"
+          ]
+        ],
+        "Gnome": [
+          [
+            "Confounding Flash",
+            "Area crowd-control cooldown.",
+            "spell_holy_mindsooth"
+          ],
+          [
+            "Contingency Plan",
+            "Reported to work like Guardian Spirit: prevents a death and heals instead.",
+            "spell_holy_guardianspirit"
+          ]
+        ],
+        "Human": [
+          [
+            "Divine Grace",
+            "Cooldown that removes Weakened Soul from the target and heals them.",
+            "spell_holy_purify"
+          ]
+        ],
+        "Troll": [
+          [
+            "Unknown",
+            "Not yet seen in the demo."
+          ]
+        ],
+        "Night Elf": [
+          [
+            "Unknown",
+            "Not yet seen in the demo."
+          ]
+        ]
+      },
+      "sources": "Warcraft Tavern, 12 Sep 2026; Dark Sacrifice tooltip from demo footage."
+    }
+  },
+  "classAbilities": {
+    "Paladin": [
+      [
+        "Holy Strike",
+        "Melee strike; mentioned by Improved Holy Strike, Iron Creed and Sacred Arbiter.",
+        "spell_holy_crusaderstrike"
+      ],
+      [
+        "Seal of Fury",
+        "Tanking seal with an absorb shield; mentioned by Improved Seal of Fury and Twist of Light.",
+        "spell_holy_sealoffury"
+      ]
+    ],
+    "Priest": [
+      [
+        "Shadow Word: Death",
+        "Execute-style Shadow spell; mentioned by Early Demise.",
+        "spell_shadow_demonicfortitude"
+      ],
+      [
+        "Devouring Plague",
+        "Appears to be a normal Shadow spell now rather than an Undead racial; mentioned by Devouring Contagion.",
+        "spell_shadow_blackplague"
+      ]
+    ],
+    "Mage": [
+      [
+        "Frostfire Bolt",
+        "Fire and Frost bolt; mentioned by Improved Fireball, Hot Streak, Missile Barrage and Incineration.",
+        "ability_mage_frostfirebolt"
+      ]
+    ],
+    "Warlock": [
+      [
+        "Bane of Agony",
+        "Curse of Agony renamed; mentioned by Improved Bane of Agony, Amplify Curse and Pandemic.",
+        "spell_shadow_curseofsargeras"
+      ],
+      [
+        "Bane of Doom",
+        "Curse of Doom renamed; mentioned by Pandemic.",
+        "spell_shadow_auraofdarkness"
+      ],
+      [
+        "Incubus",
+        "Male counterpart to the Succubus; mentioned by Fel Vitality, Fel Domination, Demonic Sacrifice and Improved Sayaad.",
+        "spell_shadow_summonsuccubus"
+      ]
+    ],
+    "Shaman": [
+      [
+        "Fire Nova",
+        "Now a spell with a cooldown rather than a totem; mentioned by Improved Fire Nova and Call of Flame.",
+        "spell_fire_sealoffire"
+      ]
+    ]
+  }
+}

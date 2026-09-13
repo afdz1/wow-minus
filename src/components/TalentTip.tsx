@@ -10,7 +10,15 @@ export type TipModel = {
   canDrop: boolean;
 };
 
-export function TalentTip({ model, compact = false }: { model: TipModel; compact?: boolean }) {
+export function TalentTip({
+  model,
+  compact = false,
+  touch = false,
+}: {
+  model: TipModel;
+  compact?: boolean;
+  touch?: boolean;
+}) {
   const { talent: t, rank, treeName, compare, reason, canDrop } = model;
   const cur = rankText(t, rank);
   const nxt = rank < t.max ? rankText(t, rank + 1) : null;
@@ -71,8 +79,18 @@ export function TalentTip({ model, compact = false }: { model: TipModel; compact
       ) : null}
       {t.reqText ? <p className="wow-tip-req">{t.reqText}</p> : null}
       <div className="wow-tip-cta">
-        {!reason ? "Left-click to learn" : reason === "Max rank" ? "Max rank" : reason}
-        {canDrop ? " · Right-click to unlearn" : ""}
+        {touch
+          ? !reason
+            ? "Tap the talent or Learn to spend a point"
+            : reason === "Max rank"
+              ? "Max rank"
+              : reason
+          : !reason
+            ? "Left-click to learn"
+            : reason === "Max rank"
+              ? "Max rank"
+              : reason}
+        {canDrop ? (touch ? " · Hold or Unlearn to remove" : " · Right-click to unlearn") : ""}
       </div>
     </div>
   );

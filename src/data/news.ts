@@ -1,5 +1,6 @@
 import { OFFICIAL } from "./art";
 import { FEATURES_ARTICLE } from "./features-article";
+import { PROFESSIONS_ARTICLE } from "./first-aid-article";
 import { VIDEOS as v, cite, videoPage } from "./video-sources";
 
 export const LAUNCH = new Date("2026-11-04T23:00:00.000Z");
@@ -8,11 +9,18 @@ export const RAIDS_UNLOCK = new Date("2026-12-09T08:00:00.000Z");
 
 export type NewsSource = { label: string; href: string };
 
+export type NewsFigure = {
+  src: string;
+  alt: string;
+  caption?: string;
+};
+
 export type NewsSection = {
   id: string;
   heading: string;
   paragraphs: string[];
   image?: string;
+  figures?: NewsFigure[];
 };
 
 export type Transcript = {
@@ -35,9 +43,12 @@ export type NewsArticle = {
   sections?: NewsSection[];
   transcripts?: Transcript[];
   sources: NewsSource[];
+  /** Replaces the default Blue/Community origin note when set. */
+  note?: string;
 };
 
 export const NEWS: NewsArticle[] = [
+  PROFESSIONS_ARTICLE,
   FEATURES_ARTICLE,
   {
     slug: "classic-plus-is-wow-forever",

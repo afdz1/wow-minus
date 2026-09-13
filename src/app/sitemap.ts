@@ -31,7 +31,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: onDay(article.date),
     changeFrequency: "weekly",
     priority: article.tag === "Ledger" ? 0.9 : 0.8,
-    images: article.image ? [article.image] : undefined,
+    images: article.image
+      ? [article.image.startsWith("http") ? article.image : absUrl(article.image)]
+      : undefined,
   }));
 
   const bluePosts: MetadataRoute.Sitemap = BLUE_POSTS.map((post) => ({

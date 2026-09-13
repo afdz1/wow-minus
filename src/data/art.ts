@@ -53,5 +53,6 @@ export const OFFICIAL = {
 
 export const ZAM_ICON = (name: string) =>
   `https://wow.zamimg.com/images/wow/icons/large/${name}.jpg`;
+export const GAME_ICON = (name: string) => `/icons/${name}.jpg`;
 export const ZAM_TALENT_BG = (id: number) =>
   `https://wow.zamimg.com/images/wow/talents/backgrounds/classic/${id}.jpg`;

@@ -1,10 +1,10 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import talentData from "@/data/talents.json";
 import racialPack from "@/data/racials.json";
-import { OFFICIAL, ZAM_ICON, ZAM_TALENT_BG } from "@/data/art";
+import { OFFICIAL, GAME_ICON, ZAM_ICON, ZAM_TALENT_BG } from "@/data/art";
 import { CLASS_COLORS, type ClassData, type Tree } from "@/lib/talents";
 import { TalentTip, type TipModel } from "@/components/TalentTip";
 
@@ -13,7 +13,7 @@ const CLASSES = Object.keys(DATA);
 type Ability = string[];
 const RACIALS = racialPack.racials as Record<
   string,
-  { race: string; classes: string[]; abilities: Ability[] }[]
+  { race: string; icon?: string; classes: string[]; abilities: Ability[] }[]
 >;
 const CLASS_ABILITIES = racialPack.classAbilities as Record<string, Ability[]>;
 const CLASS_RACIALS = racialPack.classRacials as Record<
@@ -45,8 +45,41 @@ export function TalentCalculator({ initialClass = "Warrior" }: { initialClass?: 
   const [hover, setHover] = useState<{ ti: number; i: number; rect: DOMRect } | null>(null);
   const [link, setLink] = useState("");
   const [mounted, setMounted] = useState(false);
+  const [touchUi, setTouchUi] = useState(false);
+  const pointerType = useRef("mouse");
+  const holdTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const held = useRef(false);
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    setMounted(true);
+    const hoverMq = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const sync = () => setTouchUi(!hoverMq.matches || window.innerWidth < 760);
+    sync();
+    hoverMq.addEventListener("change", sync);
+    window.addEventListener("resize", sync);
+    return () => {
+      hoverMq.removeEventListener("change", sync);
+      window.removeEventListener("resize", sync);
+    };
+  }, []);
+
+  const clearHold = () => {
+    if (holdTimer.current) {
+      clearTimeout(holdTimer.current);
+      holdTimer.current = null;
+    }
+  };
+
+  useEffect(() => () => clearHold(), []);
+
+  useEffect(() => {
+    if (!hover) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setHover(null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [hover]);
 
   const rFor = useCallback((c = cls) => ranks[c] || emptyRanks(c), [ranks, cls]);
   const pool = Math.max(0, level - 9);
@@ -178,7 +211,7 @@ export function TalentCalculator({ initialClass = "Warrior" }: { initialClass?: 
           <div>
             <div className="kicker">Forever talent planner</div>
             <h1>{cls}</h1>
-            <p>Spend points on the live tree. Hover a node for the full tooltip.</p>
+            <p>Tap a talent to spend a point and read it. Hold to unlearn.</p>
           </div>
         </div>
       </div>
@@ -310,8 +343,34 @@ export function TalentCalculator({ initialClass = "Warrior" }: { initialClass?: 
                         className={`calc-node ${st}${active ? " focus" : ""}`}
                         style={{ gridRow: t.row, gridColumn: t.col }}
                         aria-label={`${t.name}, rank ${r} of ${t.max}`}
+                        aria-expanded={active}
+                        onPointerDown={(e) => {
+                          pointerType.current = e.pointerType;
+                          held.current = false;
+                          clearHold();
+                          if (e.pointerType !== "touch" && e.pointerType !== "pen") return;
+                          const el = e.currentTarget;
+                          holdTimer.current = setTimeout(() => {
+                            held.current = true;
+                            if (canRemove(ti, i)) mutate(ti, i, -1);
+                            setHover({ ti, i, rect: el.getBoundingClientRect() });
+                          }, 450);
+                        }}
+                        onPointerUp={clearHold}
+                        onPointerCancel={clearHold}
                         onClick={(e) => {
                           e.preventDefault();
+                          const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+                          const fromTouch = pointerType.current === "touch" || pointerType.current === "pen" || touchUi;
+                          if (held.current) {
+                            held.current = false;
+                            return;
+                          }
+                          if (fromTouch) {
+                            if (!canAdd(ti, i)) mutate(ti, i, 1);
+                            setHover({ ti, i, rect });
+                            return;
+                          }
                           if (e.shiftKey) {
                             if (canRemove(ti, i)) mutate(ti, i, -1);
                           } else if (!canAdd(ti, i)) mutate(ti, i, 1);
@@ -320,17 +379,24 @@ export function TalentCalculator({ initialClass = "Warrior" }: { initialClass?: 
                           e.preventDefault();
                           if (canRemove(ti, i)) mutate(ti, i, -1);
                         }}
-                        onMouseEnter={(e) =>
-                          setHover({ ti, i, rect: (e.currentTarget as HTMLElement).getBoundingClientRect() })
-                        }
-                        onMouseMove={(e) =>
-                          setHover({ ti, i, rect: (e.currentTarget as HTMLElement).getBoundingClientRect() })
-                        }
-                        onMouseLeave={() => setHover(null)}
-                        onFocus={(e) =>
-                          setHover({ ti, i, rect: (e.currentTarget as HTMLElement).getBoundingClientRect() })
-                        }
-                        onBlur={() => setHover(null)}
+                        onMouseEnter={(e) => {
+                          if (touchUi) return;
+                          setHover({ ti, i, rect: (e.currentTarget as HTMLElement).getBoundingClientRect() });
+                        }}
+                        onMouseMove={(e) => {
+                          if (touchUi) return;
+                          setHover({ ti, i, rect: (e.currentTarget as HTMLElement).getBoundingClientRect() });
+                        }}
+                        onMouseLeave={() => {
+                          if (!touchUi) setHover(null);
+                        }}
+                        onFocus={(e) => {
+                          if (touchUi) return;
+                          setHover({ ti, i, rect: (e.currentTarget as HTMLElement).getBoundingClientRect() });
+                        }}
+                        onBlur={() => {
+                          if (!touchUi) setHover(null);
+                        }}
                         onKeyDown={(e) => {
                           if (e.key === "Enter" || e.key === " ") {
                             e.preventDefault();
@@ -366,14 +432,46 @@ export function TalentCalculator({ initialClass = "Warrior" }: { initialClass?: 
         </div>
       </div>
 
-      {mounted && hover && hoverModel && window.matchMedia("(hover: hover)").matches
+      {mounted && hover && hoverModel
         ? createPortal(
-            <div
-              className="wow-tip-float"
-              style={{ ...tipPosition(hover.rect), ["--accent" as string]: accent }}
-            >
-              <TalentTip model={hoverModel} />
-            </div>,
+            touchUi ? (
+                <div
+                  className="wow-tip-float sheet"
+                  role="dialog"
+                  aria-label={hoverModel.talent.name}
+                  style={{ ["--accent" as string]: accent }}
+                >
+                  <button type="button" className="wow-tip-close" onClick={() => setHover(null)} aria-label="Close">
+                    ×
+                  </button>
+                  <TalentTip model={hoverModel} touch />
+                  <div className="wow-tip-actions">
+                    <button
+                      type="button"
+                      className="wow-tip-act"
+                      disabled={!hoverModel.canDrop}
+                      onClick={() => mutate(hover.ti, hover.i, -1)}
+                    >
+                      Unlearn
+                    </button>
+                    <button
+                      type="button"
+                      className="wow-tip-act primary"
+                      disabled={!!hoverModel.reason}
+                      onClick={() => mutate(hover.ti, hover.i, 1)}
+                    >
+                      Learn
+                    </button>
+                  </div>
+                </div>
+            ) : (
+              <div
+                className="wow-tip-float"
+                style={{ ...tipPosition(hover.rect), ["--accent" as string]: accent }}
+              >
+                <TalentTip model={hoverModel} />
+              </div>
+            ),
             document.body
           )
         : null}
@@ -390,8 +488,9 @@ export function TalentCalculator({ initialClass = "Warrior" }: { initialClass?: 
           <div className="calc-newspells">
             <strong>New baseline spells</strong>
             <ul>
-              {CLASS_ABILITIES[cls].map(([n, t]) => (
+              {CLASS_ABILITIES[cls].map(([n, t, ic]) => (
                 <li key={n}>
+                  {ic ? <img src={GAME_ICON(ic)} alt="" /> : null}
                   <b>{n}</b> {t}
                 </li>
               ))}
@@ -407,11 +506,17 @@ export function TalentCalculator({ initialClass = "Warrior" }: { initialClass?: 
                   .filter((r) => allRaces || r.classes.includes(cls))
                   .map((r) => (
                     <article key={r.race} className={r.classes.includes(cls) ? "" : "dim"}>
-                      <h4>{r.race}</h4>
-                      <small>{r.classes.join(" · ")}</small>
+                      <div className="rn">
+                        {r.icon ? <img className="portrait" src={GAME_ICON(r.icon)} alt="" /> : null}
+                        <div>
+                          <h4>{r.race}</h4>
+                          <small>{r.classes.join(" · ")}</small>
+                        </div>
+                      </div>
                       <ul>
-                        {r.abilities.map(([n, t]) => (
+                        {r.abilities.map(([n, t, ic]) => (
                           <li key={n}>
+                            {ic ? <img src={GAME_ICON(ic)} alt="" /> : null}
                             <b>{n}</b> {t}
                           </li>
                         ))}
@@ -423,9 +528,25 @@ export function TalentCalculator({ initialClass = "Warrior" }: { initialClass?: 
           ))}
         </div>
         {CLASS_RACIALS[cls] ? (
-          <p className="calc-note">
-            {cls} racial spells — {CLASS_RACIALS[cls].note}
-          </p>
+          <div className="calc-newspells">
+            <strong>{cls} racial spells</strong>
+            <p className="calc-note" style={{ margin: "6px 0 10px" }}>
+              {CLASS_RACIALS[cls].note}
+            </p>
+            <ul>
+              {Object.entries(CLASS_RACIALS[cls].races).map(([race, spells]) =>
+                spells.map(([n, t, ic]) => (
+                  <li key={`${race}-${n}`}>
+                    {ic ? <img src={GAME_ICON(ic)} alt="" /> : null}
+                    <b>
+                      {race}: {n}
+                    </b>{" "}
+                    {t}
+                  </li>
+                )),
+              )}
+            </ul>
+          </div>
         ) : null}
       </section>
     </div>

@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { ArticleView } from "@/components/ArticleView";
 import { NEWS, getNews } from "@/data/news";
 import { pageMeta } from "@/lib/seo";
+
+const SLUG_REDIRECTS: Record<string, string> = {
+  "first-aid-profession-preview": "/blog/professions",
+};
 
 export function generateStaticParams() {
   return NEWS.map((n) => ({ slug: n.slug }));
@@ -14,6 +18,9 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  if (SLUG_REDIRECTS[slug]) {
+    return { alternates: { canonical: SLUG_REDIRECTS[slug] } };
+  }
   const article = getNews(slug);
   if (!article) return {};
   return {
@@ -40,6 +47,7 @@ export async function generateMetadata({
 
 export default async function BlogArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  if (SLUG_REDIRECTS[slug]) redirect(SLUG_REDIRECTS[slug]);
   const article = getNews(slug);
   if (!article) notFound();
   return <ArticleView article={article} />;

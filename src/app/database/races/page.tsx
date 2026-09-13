@@ -1,6 +1,6 @@
 import racialPack from "@/data/racials.json";
 import { Hero } from "@/components/Hero";
-import { OFFICIAL } from "@/data/art";
+import { GAME_ICON, OFFICIAL } from "@/data/art";
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/seo";
 
@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMeta({
 
 const RACIALS = racialPack.racials as Record<
   string,
-  { race: string; classes: string[]; abilities: string[][] }[]
+  { race: string; icon?: string; classes: string[]; abilities: string[][] }[]
 >;
 
 export default function RacesPage() {
@@ -34,13 +34,19 @@ export default function RacesPage() {
                 {races.map((r) => (
                   <div key={r.race} className="race">
                     <div className="rn">
-                      <span>{r.race}</span>
-                      <small>{r.classes.join(", ")}</small>
+                      {r.icon ? <img className="portrait" src={GAME_ICON(r.icon)} alt="" /> : null}
+                      <span>
+                        {r.race}
+                        <small>{r.classes.join(", ")}</small>
+                      </span>
                     </div>
                     <ul>
-                      {r.abilities.map(([n, t]) => (
+                      {r.abilities.map(([n, t, ic]) => (
                         <li key={n}>
-                          <b>{n}</b> {t}
+                          {ic ? <img src={GAME_ICON(ic)} alt="" /> : null}
+                          <span>
+                            <b>{n}</b> {t}
+                          </span>
                         </li>
                       ))}
                     </ul>

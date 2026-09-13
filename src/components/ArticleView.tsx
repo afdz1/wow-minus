@@ -46,7 +46,7 @@ export function ArticleView({ article }: { article: NewsArticle }) {
           description: article.dek,
           datePublished: `${article.date}T12:00:00.000Z`,
           author: { "@type": "Organization", name: article.author || SITE_NAME },
-          image: article.image,
+          image: article.image.startsWith("http") ? article.image : absUrl(article.image),
           mainEntityOfPage: absUrl(`/blog/${article.slug}`),
           publisher: {
             "@type": "Organization",
@@ -60,7 +60,11 @@ export function ArticleView({ article }: { article: NewsArticle }) {
         <p>{article.dek}</p>
       </Hero>
       <div className="wrap article">
-        {hasBlueSources(article.sources) && hasCommunitySources(article.sources) ? (
+        {article.note ? (
+          <div className="origin-note community">
+            <p>{article.note}</p>
+          </div>
+        ) : hasBlueSources(article.sources) && hasCommunitySources(article.sources) ? (
           <div className="origin-note">
             <p>
               This recap mixes <BlueBadge compact label="Blue" /> official Blizzard copy with{" "}
@@ -116,6 +120,16 @@ export function ArticleView({ article }: { article: NewsArticle }) {
               <figure className="article-figure">
                 <img src={s.image} alt="" />
               </figure>
+            ) : null}
+            {s.figures?.length ? (
+              <div className="article-figures">
+                {s.figures.map((fig) => (
+                  <figure key={fig.src} className="article-figure shot">
+                    <img src={fig.src} alt={fig.alt} />
+                    {fig.caption ? <figcaption>{fig.caption}</figcaption> : null}
+                  </figure>
+                ))}
+              </div>
             ) : null}
             {s.paragraphs.map((p, i) => (
               <p key={i} className={`stmt-${statementKind(p)}`}>
